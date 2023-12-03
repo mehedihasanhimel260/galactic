@@ -195,7 +195,7 @@ class BlogController extends Controller
     // Blog Frontend site===================================================
     public function tech_web_all_blogs_list()
     {
-        $blogs = Blog::where('status', 1)->paginate(6);
+        $blogs = Blog::where('status', 1)->paginate(4);
         return view('frontend.blog.index', compact('blogs'));
     } //end method ------------------------------------------
 

@@ -1,5 +1,11 @@
 @php
-
+    $logos = App\Models\Logo::latest()->first();
+    $projects = \App\Models\Project::where('status', 1)
+        ->latest()
+        ->take(4)
+        ->get();
+    $WebsiteLink = App\Models\WebsiteLink::latest()->first();
+    $footer = App\Models\Footer::latest()->first();
 @endphp
 
 
@@ -8,15 +14,15 @@
         <div class="row footer-items">
             <div class="col-lg-3 col-sm-6 sm-padding">
                 <div class="footer-item">
-                    <a class="brand" href="index.html"><img src="{{ asset('frontend') }}/assets/img/logo.png"
+                    <a class="brand" href="/"><img src="{{ asset($logos->frontend_footer_image) }}"
                             alt="logo"></a>
                     <p>Our success in creating business solutions is due in large part to our talented and highly
                         committed team.</p>
                     <ul class="social-list">
-                        <li><a href="{{ asset('frontend') }}/#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{ asset('frontend') }}/#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="{{ asset('frontend') }}/#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="{{ asset('frontend') }}/#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="{{ $WebsiteLink->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ $WebsiteLink->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ $WebsiteLink->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $WebsiteLink->youtube }}"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -26,11 +32,11 @@
                         <h3>Usefull Links</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="{{ asset('frontend') }}/upcoming-matches.html">Tournaments</a></li>
-                        <li><a href="{{ asset('frontend') }}/faq-page.html">Help Center</a></li>
-                        <li><a href="{{ asset('frontend') }}/about.html">Privacy and Policy</a></li>
-                        <li><a href="{{ asset('frontend') }}/about.html">Terms of Use</a></li>
-                        <li><a href="{{ asset('frontend') }}/contact.html">Contact Us</a></li>
+                        <li><a href="{{ asset('frontend') }}/#">Tournaments</a></li>
+                        <li><a href="{{ asset('frontend') }}/#">Help Center</a></li>
+                        <li><a href="{{ asset('frontend') }}/#">Privacy and Policy</a></li>
+                        <li><a href="{{ asset('frontend') }}/#">Terms of Use</a></li>
+                        <li><a href="{{ asset('frontend') }}/#">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,12 +46,12 @@
                         <h3>Contact Us</h3>
                     </div>
                     <ul class="footer-contact">
-                        <li><span>Location:</span>153 Williamson Plaza, Maggieberg, MT 09514</li>
-                        <li><span>Join Us:</span><a href="https://html.dynamiclayers.net/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
-                                data-cfemail="f3ba9d959cb3aa9c8681b49e929a9fc1c7dd909c9e">[email&#160;protected]</a>
+                        <li><span>Location:</span>{{ $WebsiteLink->address_english }}</li>
+                        <li><span>Join Us:</span><a
+                                href="mailto:{{ $WebsiteLink->email }}">{{ $WebsiteLink->email }}</a>
                         </li>
-                        <li><span>Phone:</span>+1 (062) 109-9222</li>
+                        <li><span>Phone:</span> <a href="tel:{{ $WebsiteLink->phone }}">{{ $WebsiteLink->phone }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +76,7 @@
     </div>
     <div class="copyright-wrap">
         <div class="container">
-            <p>© <span id="currentYear"></span> ThemeEaster All Rights Reserved.</p>
+            <p>© <span id="currentYear"></span>{{ $footer->copy_right_text }}</p>
         </div>
     </div>
 
