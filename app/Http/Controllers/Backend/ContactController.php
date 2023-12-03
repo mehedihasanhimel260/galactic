@@ -18,6 +18,7 @@ class ContactController extends Controller
 
     public function tech_web_contactdata_store(Request $request)
     {
+     
         $request->validate([
             'name_english' => 'required|max:200',
             'email' => 'required|unique:users|max:200',
@@ -30,7 +31,6 @@ class ContactController extends Controller
             'name_bangla' => $request->name_bangla,
             'phone' => $request->phone,
             'email' => $request->email,
-            'phone' => $request->phone,
             'subject_english' => $request->subject_english,
             'subject_bangla' => $request->subject_bangla,
             'message_english' => $request->message_english,

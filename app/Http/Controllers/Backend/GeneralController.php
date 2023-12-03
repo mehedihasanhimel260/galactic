@@ -217,6 +217,14 @@ class GeneralController extends Controller
     public function tec_web_websitelink_store(Request $request)
     {
         $website = WebsiteLink::latest()->first();
+        $iframe_html = $request->map_link;
+
+            // Extract src attribute from the iframe HTML
+            preg_match('/src="([^"]+)"/', $iframe_html, $matches);
+            
+            if (count($matches) > 1) {
+                $src = $matches[1];
+            }
         if ($website) {
             $website = WebsiteLink::latest()->first();
             $id = $website->id;
@@ -232,7 +240,7 @@ class GeneralController extends Controller
                 'twitter' => $request->twitter,
                 'telegram' => $request->telegram,
                 'youtube' => $request->youtube,
-                'map_link' => $request->map_link,
+                'map_link' =>  $src,
                 'phone' => $request->phone,
                 'updated_at' => Carbon::now()
             ]);
@@ -254,7 +262,7 @@ class GeneralController extends Controller
                 'twitter' => $request->twitter,
                 'telegram' => $request->telegram,
                 'youtube' => $request->youtube,
-                'map_link' => $request->map_link,
+                'map_link' => $src,
                 'phone' => $request->phone,
                 'created_at' => Carbon::now()
             ]);
