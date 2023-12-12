@@ -36,7 +36,7 @@
                         </li>
 
                         <li><a href="{{ route('all.blogs.list') }}">Blog</a> </li>
-                        <li><a href="{{ route('all.blogs.list') }}">Recent Activity</a> </li>
+                        <li><a href="{{ route('all.recent_activity.list') }}">Recent Activity</a> </li>
 
                         <li><a href="{{ route('contact.us') }}">Contact</a></li>
                     </ul>

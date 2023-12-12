@@ -9,7 +9,7 @@
         </div>
         <div class="container">
             <div class="page-header-info">
-                <h4>Blog All</h4>
+                <h4>Recent Activity</h4>
                 <h2>Gaming News &amp; Insights</h2>
                 <p>Our success in creating business solutions is due in large part <br>to our talented and highly
                     committed team.</p>
@@ -74,7 +74,8 @@
                         @endif
 
                         @for ($i = 1; $i <= $blogs->lastPage(); $i++)
-                            <li><a href="{{ $blogs->url($i) }}" @if ($blogs->currentPage() === $i) class="active" @endif>{{ $i }}</a></li>
+                            <li><a href="{{ $blogs->url($i) }}"
+                                    @if ($blogs->currentPage() === $i) class="active" @endif>{{ $i }}</a></li>
                         @endfor
 
                         @if ($blogs->hasMorePages())

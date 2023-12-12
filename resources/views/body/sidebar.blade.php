@@ -62,7 +62,7 @@
                 <li>
                     <a href="#sidebarService" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span>Service Setting</span>
+                        <span>Team schedule Setting</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarService">
@@ -115,16 +115,16 @@
                 <li>
                     <a href="#sidebarTeacher" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span>Team/Teacher Setting</span>
+                        <span>Team Setting</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarTeacher">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.team') }}">All Teachers</a>
+                                <a href="{{ route('all.team') }}">All Team</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.team') }}">Add Teachers</a>
+                                <a href="{{ route('add.team') }}">Add Team</a>
                             </li>
 
                         </ul>
@@ -235,16 +235,6 @@
                         </ul>
                     </div>
                 </li>
-
-
-
-
-
-
-
-
-
-
 
             </ul>
         </div>

@@ -67,20 +67,18 @@
                                     </div>
                                     <div class="col-lg-6 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Service Short Description in
-                                                English </label>
+                                            <label for="example-email" class="form-label">Team 1 Short Description </label>
                                             <textarea name="des_sm_eng" class="form-control" id="" cols="30" rows="5"
-                                                placeholder="Service Short Description English ...">
+                                                placeholder="Team 1 Short Description  ...">
                                             {!! $edit_service->des_sm_eng ?? null !!}
                                       </textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Service Short Description in
-                                                Bangla </label>
+                                            <label for="example-email" class="form-label">Team 2 Short Description </label>
                                             <textarea name="des_sm_bng" class="form-control" id="" cols="30" rows="5"
-                                                placeholder="Service Short Description Bangla ...">
+                                                placeholder="Team 2 Short Description  ...">
                                             {!! $edit_service->des_sm_bng ?? null !!}
                                         </textarea>
                                         </div>
@@ -124,8 +122,7 @@
 
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des1_eng" class="form-label">Service Long Details-1
-                                                English</label>
+                                            <label for="long_des1_eng" class="form-label">Team 1 Long Details</label>
                                             <textarea id="tinymce" class="editor form-control" col="10" row="15" name="long_des1_eng">
                                                 {!! $edit_service->long_des1_eng ?? null !!}
                                             </textarea>
@@ -134,8 +131,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des1_bng" class="form-label">Service Long Details-1
-                                                Bangla</label>
+                                            <label for="long_des1_bng" class="form-label">Team 2 Long Details </label>
                                             <textarea name="long_des1_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Service Long Details-1 Bangla...">
                                             {!! $edit_service->long_des1_bng ?? null !!}

@@ -243,6 +243,7 @@ Route::get('/about/details', [AboutController::class, 'tech_web_about_details'])
 Route::get('/contact/us', [ContactController::class, 'tech_web_contact_us'])->name('contact.us');
 Route::post('/contactdata/store', [ContactController::class, 'tech_web_contactdata_store'])->name('contactdata.store');
 Route::get('/all/blogs/list', [BlogController::class, 'tech_web_all_blogs_list'])->name('all.blogs.list');
+Route::get('/all/recent-activity/list', [BlogController::class, 'tech_web_all_recent_activity_list'])->name('all.recent_activity.list');
 Route::get('/blog/details/{id}', [BlogController::class, 'tech_web_blog_details'])->name('blog.details');
 Route::get('/packages', [ServiceController::class, 'tech_web_packages'])->name('packages');
 Route::get('/image-gallery', [GalleryController::class, 'tech_web_image_gallery'])->name('image.gallery');

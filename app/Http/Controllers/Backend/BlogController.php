@@ -136,6 +136,7 @@ class BlogController extends Controller
         }
 
         $data['title_english'] = $request->title_english;
+        $data['recent_activity'] = $request->recent_activity;
         $data['title_bangla'] = $request->title_bangla;
         $data['short_des_eng'] = $request->short_des_eng;
         $data['short_des_bng'] = $request->short_des_bng;
@@ -209,5 +210,10 @@ class BlogController extends Controller
             ->orderBy('id', 'asc')
             ->first();
         return view('frontend.blog.blog-single', compact('blog_details', 'blogs', 'previousPost', 'nextPost'));
+    }
+    public function tech_web_all_recent_activity_list()
+    {
+        $blogs = Blog::where('recent_activity', 1)->paginate(4);
+        return view('frontend.recent-activity.index', compact('blogs'));
     }
 }

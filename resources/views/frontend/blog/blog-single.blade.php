@@ -1,109 +1,60 @@
 @extends('frontend.layout')
 @section('content')
-    <div id="content" class="site-content">
-        <div class="page-header dtable text-center header-transparent">
-            <div class="dcell">
-                <div class="container">
-                    <h1 class="page-title">Blog Single</h1>
-                    <ul id="breadcrumbs" class="breadcrumbs none-style">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li class="active">Blog Single</li>
-                    </ul>
-                </div>
+    <section class="page-header single">
+        <div class="page-header-shape">
+            <div class="shape"></div>
+            <div class="shape center"></div>
+            <div class="shape center back"></div>
+            <div class="shape right"></div>
+        </div>
+        <div class="container">
+            <div class="page-header-info">
+                <h4>Blog Details</h4>
+                <h2>Microsoft Xbox Publishes First <br>Transparency Report!</h2>
+                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
+                    committed team.</p>
+                <ul class="post-meta">
+                    <li><i class="las la-user"></i> </li>
+                    <li><i class="las la-calendar"></i>{{ $blog_details->created_at->format('F d, Y') }}</li>
+                    <li><i class="las la-comments"></i> </li>
+                </ul>
             </div>
         </div>
-    </div>
-
-    <div class="entry-content">
+    </section>
+    <section class="blog-section blog-page padding-top">
         <div class="container">
             <div class="row">
-                <div class="content-area col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                    <article class="blog-post post-box">
-                        <div class="entry-media post-cat-abs">
-                            <img src="{{ asset($blog_details->main_image) }}" alt="">
-                            <div class="post-cat">
-                                <div class="posted-in"><a href="#"></a></div>
-                            </div>
-                        </div>
-                        <div class="inner-post">
-                            <header class="entry-header">
-                                <div class="entry-meta">
-                                    <span class="posted-on">_ <a
-                                            href="#">{{ $blog_details->created_at->format('F d, Y') }}</a></span>
-                                    <span class="byline">_ <a class="url fn n" href="#">
-                                            {{-- Category Name --}}
-                                        </a></span>
-                                    <span class="comment-num">_ <a href="#">
-                                            {{-- Comment count --}}
-                                        </a></span>
-                                </div>
-                                <h3 class="entry-title">{{ $blog_details->title_english }}</h3>
-                            </header>
-                            <div class="entry-summary the-excerpt">
-
-                                {!! $blog_details->short_des_eng ?? null !!}
-                                {!! $blog_details->long_des1_eng ?? null !!}
-                                {!! $blog_details->long_des2_eng ?? null !!}
-                            </div>
-                            <div class="post-nav clearfix">
-                                <div class="post-prev">
-                                    @if (!empty($previousPost->main_image))
-                                        <a href="{{ route('blog.details', $previousPost->id) }}">
-                                            <div class="thumb-post-prev"><img src="{{ asset($previousPost->main_image) }}"
-                                                    alt=""></div>
-                                            <div class="info-post-prev">
-                                                <h6><span class="title-link">{{ $previousPost->title_english }}</span></h6>
-                                                <span>{{ $previousPost->created_at->format('F d, Y') }}</span>
-                                            </div>
-                                        </a>
-                                    @endif
-
-                                </div>
-                                <div class="post-next">
-                                    @if (!empty($nextPost->main_image))
-                                        <a href="{{ route('blog.details', $nextPost->id) }}">
-                                            <div class="thumb-post-next"><img src="{{ asset($nextPost->main_image) }}"
-                                                    alt=""></div>
-                                            <div class="info-post-next">
-                                                <h6><span class="title-link">{{ $nextPost->title_english }}</span>
-                                                </h6>
-                                                <span>{{ $nextPost->created_at->format('F d, Y') }}</span>
-                                            </div>
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="widget-area primary-sidebar col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                    <aside class="widget widget_recent_news">
-                        <h6 class="widget-title">Recent Posts</h6>
-                        <ul class="recent-news clearfix">
-                            @foreach ($blogs as $blog)
-                                <li class="clearfix">
-                                    <div class="thumb">
-                                        <a href="{{ route('blog.details', $blog->id) }}"><img
-                                                src="{{ asset($blog->main_image) }}" alt=""></a>
-                                    </div>
-                                    <div class="entry-header">
-                                        <h6><a
-                                                href="{{ route('blog.details', $blog->id) }}">{{ $blog->title_english }}</a>
-                                        </h6>
-                                        <span class="post-on"><span
-                                                class="entry-date">{{ $blog->created_at->format('F d, Y') }}</span></span>
-                                    </div>
-                                </li>
-                            @endforeach
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="post-details">
+                        <div class="post-thumb"><img src="{{ asset($blog_details->main_image) }}" alt="img"></div>
+                        <p> {!! $blog_details->short_des_eng ?? null !!}
+                            {!! $blog_details->long_des1_eng ?? null !!}
+                            {!! $blog_details->long_des2_eng ?? null !!}</p>
+                        <ul class="tags">
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Startup</a></li>
+                            <li><a href="#">Design</a></li>
                         </ul>
-                    </aside>
-                    <aside class="widget widget_media_image text-center">
-                        <a href="{{ route('contact.us') }}"><img
-                                src="{{ asset('frontend/assets') }}/images/widget-banner.jpg" alt=""></a>
-                    </aside>
+
+                        <ul class="post-navigation">
+                            @if (!empty($previousPost->main_image))
+                                <li><a href="{{ route('blog.details', $previousPost->id) }}"><span><i
+                                                class="las la-angle-left"></i>Previous</span>{{ $previousPost->title_english }}</a>
+                                </li>
+                            @endif
+
+                            @if (!empty($nextPost->main_image))
+                                <li><a href="{{ route('blog.details', $nextPost->id) }}"><span>Next<i
+                                                class="las la-angle-right"></i></span>{{ $nextPost->title_english }}</a>
+                                </li>
+                            @endif
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
