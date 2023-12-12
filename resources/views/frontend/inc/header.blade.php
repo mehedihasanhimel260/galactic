@@ -43,7 +43,7 @@
                 </div>
                 <div class="header-right">
 
-                    <a class="default-btn" href="{{ asset('frontend') }}/checkout.html">Join Our Team</a>
+                    <a class="default-btn" href="{{ route('gaming_team_registation') }}">Join Our Team</a>
 
                     <div class="mobile-menu-icon">
                         <div class="burger-menu">
