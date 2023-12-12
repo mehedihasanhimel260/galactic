@@ -15,10 +15,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.services') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Service</a>
+                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Team</a>
                             </ol>
                         </div>
-                        <h4 class="page-title">All Services</h4>
+                        <h4 class="page-title">All Team</h4>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">All Services Table</h4>
+                            <h4 class="header-title">All Team Table</h4>
 
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
@@ -70,8 +70,6 @@
                                                         style="font-size:12px;color:white">Deactive</a>
                                                 @endif
                                             </td>
-
-
                                             <td width="10%">
                                                 <a href="{{ route('edit.service', $item->id) }}"
                                                     class="btn btn-info">Edit</a>
@@ -89,11 +87,6 @@
                 </div><!-- end col-->
             </div>
             <!-- end row-->
-
-
-
-
         </div> <!-- container -->
-
     </div> <!-- content -->
 @endsection
