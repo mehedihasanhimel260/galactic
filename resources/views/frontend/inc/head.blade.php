@@ -19,4 +19,6 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/elements.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/responsive.css">
+
+
 </head>

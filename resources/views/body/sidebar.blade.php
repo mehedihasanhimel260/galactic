@@ -68,10 +68,10 @@
                     <div class="collapse" id="sidebarService">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.services') }}">All Services</a>
+                                <a href="{{ route('all.services') }}">All Teams Schedule</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.services') }}">Add Services</a>
+                                <a href="{{ route('add.services') }}">Add Teams Schedule</a>
                             </li>
                         </ul>
                     </div>

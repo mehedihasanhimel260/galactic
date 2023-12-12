@@ -403,71 +403,39 @@
                     committed team.</p>
             </div>
             <div class="row grid-post">
-                <div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="300ms">
-                    <div class="post-card">
-                        <div class="post-thumb">
-                            <img src="{{ asset('frontend') }}/assets/img/post-1.jpg" alt="post">
-                            <a href="{{ asset('frontend') }}/blog-classic.html" class="post-category">Business</a>
-                        </div>
-                        <div class="post-content-wrap">
-                            <ul class="post-meta">
-                                <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                <li><i class="las la-user"></i>Elliot Alderson</li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="{{ asset('frontend') }}/blog-details.html">How to start initiating an startup
-                                        in few days.</a>
-                                </h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your
-                                    funds more...</p>
-                                <a href="{{ asset('frontend') }}/blog-details.html" class="read-more">Read More</a>
+                @foreach ($blogs as $blog)
+                    <div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom">
+                        <div class="post-card">
+                            <div class="post-thumb">
+                                <img src="{{ asset($blog->main_image) }}" alt="post">
+                                <a href="{{ asset($blog->main_image) }}" class="post-category"></a>
+                            </div>
+                            <div class="post-content-wrap">
+                                <ul class="post-meta">
+                                    <li><i class="las la-calendar"></i>{{ $blog->created_at->format('F d, Y') }}</li>
+                                    <li><i class="las la-user"></i></li>
+                                </ul>
+                                <div class="post-content">
+                                    <h3><a href="{{ route('blog.details', $blog->id) }}">{{ $blog->title_english }}</a>
+                                    </h3>
+                                    <p> @php
+                                        $blog_short_des_eng = strip_tags($blog->short_des_eng);
+                                        $words = str_word_count($blog_short_des_eng, 1);
+                                        $shortenedText = implode(' ', array_slice($words, 0, 15));
+                                    @endphp
+                                        @if (count($words) > 15)
+                                            {!! $shortenedText !!}...
+                                            {{-- {{ strip_tags($shortenedText) }} --}}
+                                        @else
+                                            {{ strip_tags($blog->short_des_eng) }}
+                                        @endif
+                                    </p>
+                                    <a href="{{ route('blog.details', $blog->id) }}" class="read-more">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <  div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="400ms">
-                    <div class="post-card">
-                        <div class="post-thumb">
-                            <img src="{{ asset('frontend') }}/assets/img/post-2.jpg" alt="post">
-                            <a href="{{ asset('frontend') }}/blog-classic.html" class="post-category">Startup</a>
-                        </div>
-                        <div class="post-content-wrap">
-                            <ul class="post-meta">
-                                <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                <li><i class="las la-user"></i>Elliot Alderson</li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="{{ asset('frontend') }}/blog-details.html">Financial experts support help you
-                                        to find out.</a>
-                                </h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your
-                                    funds more...</p>
-                                <a href="{{ asset('frontend') }}/blog-details.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </>
-                <div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="500ms">
-                    <div class="post-card">
-                        <div class="post-thumb">
-                            <img src="{{ asset('frontend') }}/assets/img/post-3.jpg" alt="post">
-                            <a href="{{ asset('frontend') }}/blog-classic.html" class="post-category">Finance</a>
-                        </div>
-                        <div class="post-content-wrap">
-                            <ul class="post-meta">
-                                <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                <li><i class="las la-user"></i>Elliot Alderson</li>
-                            </ul>
-                            <div class="post-content">
-                                <h3><a href="{{ asset('frontend') }}/blog-details.html">Innovative business all over the
-                                        world.</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your
-                                    funds more...</p>
-                                <a href="{{ asset('frontend') }}/blog-details.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

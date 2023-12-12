@@ -24,6 +24,8 @@
     </div>
 
     @include('frontend.inc.script')
+
+
 </body>
 
 

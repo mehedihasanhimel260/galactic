@@ -1,4 +1,3 @@
-
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/vendor/jquary-3.6.0.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -13,6 +12,7 @@
 <script src="{{ asset('frontend') }}/assets/js/vendor/wow.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/contact.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
+
 <script>
     (function() {
         var js =
@@ -50,4 +50,6 @@
             };
         }
     })();
+
+
 </script>

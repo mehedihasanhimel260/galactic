@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,6 +16,7 @@ return new class extends Migration
             $table->string('title_bangla')->nullable();
             $table->text('short_des_eng')->nullable();
             $table->text('short_des_bng')->nullable();
+            $table->integer('recent_activity')->nullable();
             $table->longText('long_des1_eng')->nullable();
             $table->longText('long_des1_bng')->nullable();
             $table->longText('long_des2_eng')->nullable();

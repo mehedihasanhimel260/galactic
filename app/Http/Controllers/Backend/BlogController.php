@@ -57,7 +57,7 @@ class BlogController extends Controller
         Blog::insert([
             'title_english' => $request->title_english,
             'title_bangla' => $request->title_bangla,
-
+            'recent_activity' => $request->recent_activity,
             'short_des_eng' => $request->short_des_eng,
             'short_des_bng' => $request->short_des_bng,
             'long_des1_eng' => $request->long_des1_eng,
@@ -66,7 +66,6 @@ class BlogController extends Controller
             'long_des2_bng' => $request->long_des2_bng,
             'long_des3_eng' => $request->long_des3_eng,
             'long_des3_bng' => $request->long_des3_bng,
-
             'main_image' => $main_image_url ?? null,
             'banner_image' => $banner_image_url ?? null,
             'details_image1' => $details_image1_url ?? null,
