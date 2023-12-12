@@ -13,6 +13,7 @@ use App\Models\Sponsor;
 use App\Models\Team;
 use App\Models\Slider;
 use App\Models\Testimonial2;
+use App\Models\VideoGallery;
 
 class WebViewHomePageController extends Controller
 {
@@ -45,6 +46,9 @@ class WebViewHomePageController extends Controller
         $projects = Project::where('status', 1)
             ->limit(6)
             ->get();
-        return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images'));
+        $videos = VideoGallery::where('status', 1)
+            ->latest('id', 'DESC')
+            ->get();
+        return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos'));
     }
 }

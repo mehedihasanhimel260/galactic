@@ -136,6 +136,7 @@ class GalleryController extends Controller
         $videoId = isset($matches[1]) ? $matches[1] : null;
 
         VideoGallery::insert([
+            'title' => $request->title,
             'video_link' => $videoId,
             'created_at' => Carbon::now(),
         ]);
@@ -165,6 +166,7 @@ class GalleryController extends Controller
 
         VideoGallery::findOrFail($id)->update([
             'video_link' => $videoId,
+            'title' => $request->title,
             'updated_at' => Carbon::now(),
         ]);
         $notification = [

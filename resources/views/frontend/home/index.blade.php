@@ -6,7 +6,7 @@
                 <h4>Enjoy The Games</h4>
                 <h1>Epic Games Made For<br> True Gamers!</h1>
                 <div class="btn-group">
-                    <a href="{{ asset('frontend') }}/contact.html" class="default-btn">Join With Us</a>
+                    <a href="{{ route('contact.us') }}" class="default-btn">Join With Us</a>
                     <a data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=tv7LfFeamsc"
                         class="dl-video-popup play-btn">
                         <svg enable-background="new 0 0 41.999 41.999" version="1.1" viewBox="0 0 41.999 41.999"
@@ -130,45 +130,23 @@
             <div class="carousel-wrap">
                 <div class="watch-carousel swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/video-thumb-1.jpg" alt="thumb">
-                            <a data-autoplay="true" data-vbtype="video"
-                                href="https://www.youtube.com/watch?v=tv7LfFeamsc" class="dl-video-popup play-btn">
-                                <svg enable-background="new 0 0 41.999 41.999" version="1.1" viewBox="0 0 41.999 41.999"
-                                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40  c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20  c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
-                                    </path>
-                                </svg>
-                                <div class="ripple"></div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/video-thumb-2.jpg" alt="thumb">
-                            <a data-autoplay="true" data-vbtype="video"
-                                href="https://www.youtube.com/watch?v=tv7LfFeamsc" class="dl-video-popup play-btn">
-                                <svg enable-background="new 0 0 41.999 41.999" version="1.1" viewBox="0 0 41.999 41.999"
-                                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40  c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20  c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
-                                    </path>
-                                </svg>
-                                <div class="ripple"></div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/video-thumb-3.jpg" alt="thumb">
-                            <a data-autoplay="true" data-vbtype="video"
-                                href="https://www.youtube.com/watch?v=tv7LfFeamsc" class="dl-video-popup play-btn">
-                                <svg enable-background="new 0 0 41.999 41.999" version="1.1" viewBox="0 0 41.999 41.999"
-                                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40  c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20  c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
-                                    </path>
-                                </svg>
-                                <div class="ripple"></div>
-                            </a>
-                        </div>
+                        @foreach ($videos as $video)
+                            <div class="swiper-slide">
+                                <img src="https://i.ytimg.com/vi/{{ $video->video_link }}/hqdefault.jpg" alt="thumb">
+                                <a data-autoplay="true" data-vbtype="video"
+                                    href="https://www.youtube.com/watch?v={{ $video->video_link }}"
+                                    class="dl-video-popup play-btn">
+                                    <svg enable-background="new 0 0 41.999 41.999" version="1.1"
+                                        viewBox="0 0 41.999 41.999" xml:space="preserve"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40  c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20  c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
+                                        </path>
+                                    </svg>
+                                    <div class="ripple"></div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -188,98 +166,27 @@
             <div class="outside-spacing">
                 <div class="team-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="team-item">
-                                <div class="team-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/team-1.png" alt="thumb">
-                                    <div class="shape-wrap">
-                                        <div class="shape shape-1"></div>
-                                        <div class="shape shape-2"></div>
-                                        <div class="shape shape-3"></div>
-                                        <div class="shape shape-4"></div>
+                        @foreach ($teams as $team)
+                            <div class="swiper-slide">
+                                <div class="team-item">
+                                    <div class="team-thumb">
+                                        <img src="{{ asset($team->image) }}" alt="thumb">
+                                        <div class="shape-wrap">
+                                            <div class="shape shape-1"></div>
+                                            <div class="shape shape-2"></div>
+                                            <div class="shape shape-3"></div>
+                                            <div class="shape shape-4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="team-content">
+                                        <span class="whte-shape"></span>
+                                        <h3><a href="#">{{ $team->name_english }}</a></h3>
+                                        <h4> {{ $team->desig_english }}</h4>
                                     </div>
                                 </div>
-                                <div class="team-content">
-                                    <span class="whte-shape"></span>
-                                    <h3><a href="{{ asset('frontend') }}/player-details.html">Brandon Larned</a></h3>
-                                    <h4>Overwatch</h4>
-                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="team-item">
-                                <div class="team-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/team-2.png" alt="thumb">
-                                    <div class="shape-wrap">
-                                        <div class="shape shape-1"></div>
-                                        <div class="shape shape-2"></div>
-                                        <div class="shape shape-3"></div>
-                                        <div class="shape shape-4"></div>
-                                    </div>
-                                </div>
-                                <div class="team-content">
-                                    <span class="whte-shape"></span>
-                                    <h3><a href="{{ asset('frontend') }}/player-details.html">Félix Lengyel</a></h3>
-                                    <h4>Valorant</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="team-item">
-                                <div class="team-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/team-3.png" alt="thumb">
-                                    <div class="shape-wrap">
-                                        <div class="shape shape-1"></div>
-                                        <div class="shape shape-2"></div>
-                                        <div class="shape shape-3"></div>
-                                        <div class="shape shape-4"></div>
-                                    </div>
-                                </div>
-                                <div class="team-content">
-                                    <span class="whte-shape"></span>
-                                    <h3><a href="{{ asset('frontend') }}/player-details.html">Sasha Hostyn</a></h3>
-                                    <h4>StarCraft II</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="team-item">
-                                <div class="team-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/team-4.png" alt="thumb">
-                                    <div class="shape-wrap">
-                                        <div class="shape shape-1"></div>
-                                        <div class="shape shape-2"></div>
-                                        <div class="shape shape-3"></div>
-                                        <div class="shape shape-4"></div>
-                                    </div>
-                                </div>
-                                <div class="team-content">
-                                    <span class="whte-shape"></span>
-                                    <h3><a href="{{ asset('frontend') }}/player-details.html">Zaqueri Black</a></h3>
-                                    <h4>Call of Duty</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="team-item">
-                                <div class="team-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/team-5.png" alt="thumb">
-                                    <div class="shape-wrap">
-                                        <div class="shape shape-1"></div>
-                                        <div class="shape shape-2"></div>
-                                        <div class="shape shape-3"></div>
-                                        <div class="shape shape-4"></div>
-                                    </div>
-                                </div>
-                                <div class="team-content">
-                                    <span class="whte-shape"></span>
-                                    <h3><a href="{{ asset('frontend') }}/player-details.html">Fredrik Johanson</a></h3>
-                                    <h4>Counter Strike</h4>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-
                     <div class="swiper-nav swiper-next"><i class="las la-long-arrow-alt-right"></i></div>
                     <div class="swiper-nav swiper-prev"><i class="las la-long-arrow-alt-left"></i></div>
                 </div>
@@ -333,30 +240,17 @@
             <div class="outside-spacing">
                 <div class="sponsor-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-1.png" alt="client">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-2.png" alt="client">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-3.png" alt="client">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-4.png" alt="client">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-5.png" alt="client">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('frontend') }}/assets/img/client-6.png" alt="client">
-                        </div>
+                        @foreach ($brands as $brand)
+                            <div class="swiper-slide">
+                                <img src="{{ asset($brand->image) }}" alt="client">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="shop-section padding-bottom">
+    {{-- <section class="shop-section padding-bottom">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
                 <h3>Online Gaming Shop</h3>
@@ -499,7 +393,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="blog-section">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
@@ -531,7 +425,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="400ms">
+                <  div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="400ms">
                     <div class="post-card">
                         <div class="post-thumb">
                             <img src="{{ asset('frontend') }}/assets/img/post-2.jpg" alt="post">
@@ -552,7 +446,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </>
                 <div class="col-lg-4 col-md-6 padding-15 wow fade-in-bottom" data-wow-delay="500ms">
                     <div class="post-card">
                         <div class="post-thumb">

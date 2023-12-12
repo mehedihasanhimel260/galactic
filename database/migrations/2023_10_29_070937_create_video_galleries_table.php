@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('video_galleries', function (Blueprint $table) {
             $table->id();
+            $table->text('title')->nullable();
             $table->longText('video_link')->nullable();
             $table->integer('status')->default(0);
             $table->integer('add_home')->default(0);

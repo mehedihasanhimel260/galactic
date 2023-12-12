@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Team;
 use App\Models\CounterIcon;
+use App\Models\Sponsor;
 use App\Models\Testimonial2;
+use App\Models\VideoGallery;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 
@@ -100,6 +102,10 @@ class AboutController extends Controller
 
     public function tech_web_about_details()
     {
+        $videos = VideoGallery::where('status', 1)
+            ->latest('id', 'DESC')
+            ->get();
+        $brands = Sponsor::all();
         $about = About::first();
         $teams = Team::inRandomOrder()
             ->limit(4)
@@ -109,6 +115,6 @@ class AboutController extends Controller
             ->limit(5)
             ->get();
         $projects_don = CounterIcon::latest()->first();
-        return view('frontend.about.index', compact('about', 'teams', 'testimonials', 'projects_don'));
+        return view('frontend.about.index', compact('about', 'teams', 'testimonials', 'projects_don', 'brands', 'videos'));
     }
 }
