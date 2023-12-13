@@ -27,10 +27,7 @@
                         <li><a href="{{ route('about.details') }}">About Us</a></li>
                         <li><a href="{{ asset('frontend') }}/#">Tournament</a>
                             <ul>
-                                <li><a href="{{ asset('frontend') }}/upcoming-matches.html">Upcoming Matches</a></li>
-                                <li><a href="{{ asset('frontend') }}/stream-schedule.html">Tournament Schedule</a></li>
-                                <li><a href="{{ asset('frontend') }}/match-details.html">Match Details</a></li>
-                                <li><a href="{{ asset('frontend') }}/player-details.html">Player Details</a></li>
+                                <li><a href="{{ route('webview.upcoming_matches') }}">Upcoming Matches</a></li>
                                 <li><a href="{{ asset('frontend') }}/team-details.html">Team Details</a></li>
                             </ul>
                         </li>

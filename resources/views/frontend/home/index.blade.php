@@ -47,75 +47,34 @@
                     committed team.</p>
             </div>
             <ul class="upcoming-matches">
-                <li class="matches-list">
-                    <div class="participate-team wow fade-in-left" data-wow-delay="200ms">
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-1.png" alt="team">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">Purple Death Cadets</a></h3>
-                        <div class="match-info">Group 04 | Match 06th</div>
-                    </div>
-                    <div class="match-time">
-                        <h3>10:00 <span>25TH May 2024</span></h3>
-                        <ul class="watch-btn">
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-youtube"></i></a>
-                            </li>
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-twitch"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="participate-team oponent wow fade-in-right" data-wow-delay="200ms">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">Trigger Brain Squad</a></h3>
-                        <div class="match-info">Group 04 | Match 06th</div>
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-2.png" alt="team">
-                    </div>
-                </li>
-                <li class="matches-list">
-                    <div class="participate-team wow fade-in-left" data-wow-delay="400ms">
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-3.png" alt="team">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">The Black Hat Hackers</a></h3>
-                        <div class="match-info">Group 04 | Match 06th</div>
-                    </div>
-                    <div class="match-time">
-                        <h3>12:30 <span>10TH Jan 2024</span></h3>
-                        <ul class="watch-btn">
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-youtube"></i></a>
-                            </li>
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-twitch"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="participate-team oponent wow fade-in-right" data-wow-delay="400ms">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">Your Worst Nightmare</a></h3>
-                        <div class="match-info">Group 05 | Match 02nd</div>
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-4.png" alt="team">
-                    </div>
-                </li>
-                <li class="matches-list">
-                    <div class="participate-team wow fade-in-left" data-wow-delay="600ms">
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-5.png" alt="team">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">Witches and Quizards</a></h3>
-                        <div class="match-info">Group 02 | Match 03rd</div>
-                    </div>
-                    <div class="match-time">
-                        <h3>04:20 <span>15TH Dec 2024</span></h3>
-                        <ul class="watch-btn">
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-youtube"></i></a>
-                            </li>
-                            <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
-                                    href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-twitch"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="participate-team oponent wow fade-in-right" data-wow-delay="600ms">
-                        <h3><a href="{{ asset('frontend') }}/team-details.html">Resting Bitch Faces</a></h3>
-                        <div class="match-info">Group 02 | Match 03rd</div>
-                        <img src="{{ asset('frontend') }}/assets/img/team-logo-6.png" alt="team">
-                    </div>
-                </li>
+                @foreach ($services as $service)
+                    <li class="matches-list">
+                        <div class="participate-team wow fade-in-left" data-wow-delay="200ms">
+                            <img src="{{ asset($service->detais_image_1) }}" alt="team">
+                            <h3><a href="#">{{ $service->title_english }}</a></h3>
+                            {{-- <div class="match-info">Group 04 | Match 06th</div> --}}
+                        </div>
+                        <div class="match-time">
+                            <h3>{{ Carbon\Carbon::parse($service->price)->format('h:i') }} <br>
+                                {{ Carbon\Carbon::parse($service->price)->format('A') }}<span>{{ Carbon\Carbon::parse($service->price)->format('dS M Y') }}</span>
+                            </h3>
+                            <ul class="watch-btn">
+                                {{-- <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
+                                        href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i
+                                            class="lab la-youtube"></i></a>
+                                </li>
+                                <li><a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
+                                        href="https://www.youtube.com/watch?v=tv7LfFeamsc"><i class="lab la-twitch"></i></a>
+                                </li> --}}
+                            </ul>
+                        </div>
+                        <div class="participate-team oponent wow fade-in-right" data-wow-delay="200ms">
+                            <h3><a href="#">{{ $service->title_bangla }}</a></h3>
+                            {{-- <div class="match-info">Group 04 | Match 06th</div> --}}
+                            <img src="{{ asset($service->detais_image_2) }}" alt="team">
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </section>
@@ -137,8 +96,7 @@
                                     href="https://www.youtube.com/watch?v={{ $video->video_link }}"
                                     class="dl-video-popup play-btn">
                                     <svg enable-background="new 0 0 41.999 41.999" version="1.1"
-                                        viewBox="0 0 41.999 41.999" xml:space="preserve"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                        viewBox="0 0 41.999 41.999" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40  c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20  c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
                                         </path>

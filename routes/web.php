@@ -53,6 +53,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
 Route::controller(WebViewHomePageController::class)->group(function () {
     Route::get('/', 'tech_web_home_index')->name('webview.home.index');
+    Route::get('/upcoming-matches', 'tech_web_upcoming_matches')->name('webview.upcoming_matches');
 });
 
 // beckend all routes///////////////////////////////////////////////////////////////////////////

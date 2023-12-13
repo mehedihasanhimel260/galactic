@@ -28,7 +28,7 @@ class WebViewHomePageController extends Controller
             ->limit(5)
             ->get();
         $services = Service::latest()
-            ->limit(3)
+            ->limit(6)
             ->get();
         $blogs = Blog::latest()
             ->limit(3)
@@ -50,5 +50,10 @@ class WebViewHomePageController extends Controller
             ->latest('id', 'DESC')
             ->get();
         return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos'));
+    }
+    public function tech_web_upcoming_matches()
+    {
+        $services = Service::latest()->paginate(10);
+        return view('frontend.upcoming-matches.index', compact('services'));
     }
 }
