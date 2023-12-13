@@ -31,10 +31,9 @@
                             {!! $blog_details->long_des1_eng ?? null !!}
                             {!! $blog_details->long_des2_eng ?? null !!}</p>
                         <ul class="tags">
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Startup</a></li>
-                            <li><a href="#">Design</a></li>
+                            @if ($blog_details->recent_activity == 2)
+                                <li><a href="{{ route('tech_web_gaming_career_apply_form') }}">Apply for job</a></li>
+                            @endif
                         </ul>
 
                         <ul class="post-navigation">

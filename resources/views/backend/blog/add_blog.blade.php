@@ -43,8 +43,13 @@
                                             <input type="checkbox" name="recent_activity" value="1">
                                             <label for="recent_activity"> Is it recent activity ?</label><br>
                                         </div>
+                                        <div class="form-group mb-3">
+                                            <input type="checkbox" name="recent_activity" value="2">
+                                            <label for="recent_activity"> Is it Career Post ?</label><br>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
+
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">

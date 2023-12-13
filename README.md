@@ -9,4 +9,4 @@ then:<br>
 npm i<br>
 then:<br>
 npm run dev<br>
-php artisan migrate:refresh --path='./database/migrations/2023_10_27_125514_create_blogs_table.php'
+php artisan migrate:refresh --path='./database/migrations/2023_12_13_052301_create_careers_table.php'
