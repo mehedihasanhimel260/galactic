@@ -25,8 +25,9 @@
                         </li>
 
                         <li><a href="{{ route('about.details') }}">About Us</a></li>
-                        <li><a href="{{ asset('frontend') }}/#">Tournament</a>
+                        <li><a href="#">Tournament</a>
                             <ul>
+                                <li><a href="{{ route('all.tunament.list') }}">Upcoming Tournament</a></li>
                                 <li><a href="{{ route('webview.upcoming_matches') }}">Upcoming Matches</a></li>
                                 <li><a href="{{ asset('frontend') }}/team-details.html">Team Details</a></li>
                             </ul>
@@ -35,8 +36,16 @@
                         <li><a href="{{ route('all.blogs.list') }}">Blog</a> </li>
                         <li><a href="{{ route('all.recent_activity.list') }}">Recent Activity</a> </li>
                         <li><a href="{{ route('tech_web_gaming_career_apply') }}">Career</a></li>
-
                         <li><a href="{{ route('contact.us') }}">Contact</a></li>
+                        <li>
+                            @if (auth()->check())
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button class="btn" type="submit">Logout</button>
+                                </form>
+                            @endif
+
+                        </li>
                     </ul>
                 </div>
                 <div class="header-right">

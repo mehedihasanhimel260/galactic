@@ -18,10 +18,10 @@
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('project.index') }}"
                                     class="btn btn-primary rounded-pill waves-effect waves-light"><i
-                                        class="fe-arrow-left"></i>All project</a>
+                                        class="fe-arrow-left"></i>All Product</a>
                             </ol>
                         </div>
-                        <h4 class="page-title">Add project</h4>
+                        <h4 class="page-title">Add Product</h4>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <p class="text-white" style="font-size: 20px">Project Main Informantion</p>
+                            <p class="text-white" style="font-size: 20px">Product Main Informantion</p>
 
                             <form id="myForm" method="post" action="{{ route('project.store') }}"
                                 enctype="multipart/form-data">
@@ -40,14 +40,14 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
-                                            <label for="simpleinput" class="form-label">Project Title In English </label>
+                                            <label for="simpleinput" class="form-label">Product Title In English </label>
                                             <input type="text" name="title_english" id="title_english"
                                                 class="form-control" placeholder="Project Title In English...">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Project Title In Bangla </label>
+                                            <label for="example-email" class="form-label">Product Title In Bangla </label>
                                             <input type="text" id="title_bangla" name="title_bangla" class="form-control"
                                                 placeholder="Project Title In Bangla ...">
                                         </div>
@@ -64,14 +64,14 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Project Price </label>
+                                            <label for="example-email" class="form-label">Product Price </label>
                                             <input type="number" id="price" name="price" class="form-control"
                                                 placeholder="Course Price ...">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Project Short Description in
+                                            <label for="example-email" class="form-label">Product Short Description in
                                                 English </label>
                                             <textarea name="des_sm_eng" class="form-control" id="" cols="30" rows="5"
                                                 placeholder="Project Short Description English ...">
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-lg-6 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Project Short Description in
+                                            <label for="example-email" class="form-label">Product Short Description in
                                                 English </label>
                                             <textarea name="des_sm_bng" class="form-control" id="" cols="30" rows="5"
                                                 placeholder="Project Short Description Bangla ...">
@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
 
-                                    <p class="text-white my-3" style="font-size: 20px">Project Details Informantion</p>
+                                    <p class="text-white my-3" style="font-size: 20px">Product Details Informantion</p>
 
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
@@ -137,7 +137,7 @@
 
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des1_eng" class="form-label">Project Long Details-1
+                                            <label for="long_des1_eng" class="form-label">Product Long Details-1
                                                 English</label>
                                             <textarea id="tinymce" class="editor form-control" col="10" row="15" name="long_des1_eng"></textarea>
 
@@ -146,20 +146,20 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des1_bng" class="form-label">Project Long Details-1
+                                            <label for="long_des1_bng" class="form-label">Product Long Details-1
                                                 Bangla</label>
                                             <textarea name="long_des1_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
-                                                placeholder="Project Long Details-1 Bangla...">
+                                                placeholder="Product Long Details-1 Bangla...">
                                         </textarea>
 
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des2_eng" class="form-label">Project Long Details-2
+                                            <label for="long_des2_eng" class="form-label">Product Long Details-2
                                                 English</label>
                                             <textarea name="long_des2_eng" id="tinymce" class="editor form-control" cols="30" rows="15"
-                                                placeholder="Project Long Details-2 English ...">
+                                                placeholder="Product Long Details-2 English ...">
                                         </textarea>
 
                                         </div>
@@ -167,20 +167,20 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des2_bng" class="form-label">Project Long Details-2
+                                            <label for="long_des2_bng" class="form-label">Product Long Details-2
                                                 Bangla</label>
                                             <textarea name="long_des2_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
-                                                placeholder="Project Long Details-2 Bangla ...">
+                                                placeholder="Product Long Details-2 Bangla ...">
                                     </textarea>
 
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des3_eng" class="form-label">Project Long Details-3
+                                            <label for="long_des3_eng" class="form-label">Product Long Details-3
                                                 English</label>
                                             <textarea name="long_des3_eng" id="tinymce" class="editor form-control" cols="30" rows="15"
-                                                placeholder="Project Long Details-3 English ...">
+                                                placeholder="Product Long Details-3 English ...">
                                     </textarea>
 
                                         </div>
@@ -188,10 +188,10 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des3_bng" class="form-label">Project Long Details-3
+                                            <label for="long_des3_bng" class="form-label">Product Long Details-3
                                                 Bangla</label>
                                             <textarea name="long_des3_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
-                                                placeholder="Project Long Details-3 Bangla ...">
+                                                placeholder="Product Long Details-3 Bangla ...">
                                 </textarea>
 
                                         </div>

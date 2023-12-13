@@ -79,18 +79,18 @@
 
 
                 <li>
-                    <a href="#sidebarService" data-bs-toggle="collapse">
+                    <a href="#sidebarProduct" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span>Project Setting</span>
+                        <span>Product Setting</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarService">
+                    <div class="collapse" id="sidebarProduct">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('project.index') }}">All Project</a>
+                                <a href="{{ route('project.index') }}">All Product</a>
                             </li>
                             <li>
-                                <a href="{{ route('project.create') }}">Add Project</a>
+                                <a href="{{ route('project.create') }}">Add Product</a>
                             </li>
                         </ul>
                     </div>
@@ -130,20 +130,35 @@
                         </ul>
                     </div>
                 </li>
+                <li>
+                    <a href="#sidebarTrunament" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span>Trunament Team Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarTrunament">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('gameing.index') }}">All Team</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
 
                 <li>
                     <a href="#sidebarBlog" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span>Blog Setting</span>
+                        <span>Post Setting</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarBlog">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.blogs') }}">All Blogs</a>
+                                <a href="{{ route('all.blogs') }}">All Post</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.team') }}">Add Blogs</a>
+                                <a href="{{ route('add.blogs') }}">Add Post</a>
                             </li>
 
                         </ul>
@@ -231,6 +246,23 @@
                             </li>
                             <li>
                                 <a href="{{ route('counter.image') }}">Counter Image</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#sidebarApplication" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span>Career/Massage Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarApplication">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('tech_web_gaming_career_apply_index') }}">All Application</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('tech_web_gaming_massage_index') }}">All Massage</a>
                             </li>
                         </ul>
                     </div>

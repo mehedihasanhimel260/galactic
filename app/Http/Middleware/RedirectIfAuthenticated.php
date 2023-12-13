@@ -23,13 +23,13 @@ class RedirectIfAuthenticated
             // if (Auth::guard($guard)->check()) {
             //     return redirect(RouteServiceProvider::HOME);
             // }
-            
-            if(Auth::check() && Auth::user()->role== 'user'){
-                return redirect('/user/dashboard');
-               }              
-               if(Auth::check() && Auth::user()->role== 'admin'){
+
+            if (Auth::check() && Auth::user()->role == 'user') {
+                return redirect('/');
+            }
+            if (Auth::check() && Auth::user()->role == 'admin') {
                 return redirect('/dashboard');
-               }
+            }
         }
 
         return $next($request);

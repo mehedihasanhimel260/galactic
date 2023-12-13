@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Career;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
@@ -13,15 +14,17 @@ class CareerController extends Controller
      */
     public function index()
     {
-        //
+        $career = Career::get();
+        return view('backend.career.index', compact('career'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function tech_web_gaming_massage_index()
     {
-        //
+        $career = ContactUs::get();
+        return view('backend.career.message', compact('career'));
     }
 
     /**
@@ -51,17 +54,36 @@ class CareerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Career $career)
+    public function delete_contuctus($id)
     {
-        //
+        $career = ContactUs::findOrFail($id);
+        $career->delete();
+        $notification = [
+            'message' => 'Message Deleted Successfully!',
+            'alert-type' => 'error',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Career $career)
+    public function destroy($id)
     {
-        //
+        $blog_image = Career::findOrFail($id);
+        // $image = $service_image->banner_image;
+        @unlink($blog_image->cv);
+
+        Career::findOrFail($id)->delete();
+        $notification = [
+            'message' => 'CV Deleted Successfully!',
+            'alert-type' => 'error',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     }
     public function tech_web_gaming_career_apply()
     {

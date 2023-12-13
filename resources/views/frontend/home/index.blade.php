@@ -208,7 +208,7 @@
             </div>
         </div>
     </div>
-    {{-- <section class="shop-section padding-bottom">
+    <section class="shop-section padding-bottom">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
                 <h3>Online Gaming Shop</h3>
@@ -219,131 +219,36 @@
             <div class="outside-spacing">
                 <div class="shop-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <div class="product-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/product-1.png" alt="img">
-                                    <a href="{{ asset('frontend') }}/#" class="badge in-stock">In Stock</a>
-                                    <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-inner">
-                                        <ul class="category">
-                                            <li><a href="{{ asset('frontend') }}/#">Steering</a></li>
-                                        </ul>
-                                        <ul class="rating">
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                        </ul>
+                        @foreach ($projects as $project)
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-thumb">
+                                        <img src="{{ asset($project->main_image) }}" alt="img">
+                                        {{-- <a href="{{ asset('frontend') }}/#" class="badge in-stock"></a> --}}
+                                        <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
                                     </div>
-                                    <h3><a href="{{ asset('frontend') }}/shop-details.html">Steering Wheel</a></h3>
-                                    <h4 class="price">$69.00</h4>
+                                    <div class="product-info">
+                                        {{-- <div class="product-inner">
+                                            <ul class="category">
+                                                <li><a href="{{ asset('frontend') }}/#">Steering</a></li>
+                                            </ul>
+                                            <ul class="rating">
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                            </ul>
+                                        </div> --}}
+                                        <h3><a
+                                                href="{{ asset('frontend') }}/shop-details.html">{{ $project->title_english }}</a>
+                                        </h3>
+                                        <h4 class="price">${{ $project->price }}</h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <div class="product-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/product-2.png" alt="img">
-                                    <a href="{{ asset('frontend') }}/#" class="badge hot">Hot</a>
-                                    <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-inner">
-                                        <ul class="category">
-                                            <li><a href="{{ asset('frontend') }}/#">Mouse</a></li>
-                                        </ul>
-                                        <ul class="rating">
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <h3><a href="{{ asset('frontend') }}/shop-details.html">Fantech Mouse</a></h3>
-                                    <h4 class="price">$49.00</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <div class="product-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/product-3.png" alt="img">
-                                    <a href="{{ asset('frontend') }}/#" class="badge sale">-70%</a>
-                                    <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-inner">
-                                        <ul class="category">
-                                            <li><a href="{{ asset('frontend') }}/#">Console</a></li>
-                                        </ul>
-                                        <ul class="rating">
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <h3><a href="{{ asset('frontend') }}/shop-details.html">Targus Console</a></h3>
-                                    <h4 class="price">$39.00</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <div class="product-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/product-4.png" alt="img">
-                                    <a href="{{ asset('frontend') }}/#" class="badge hot">Hot</a>
-                                    <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-inner">
-                                        <ul class="category">
-                                            <li><a href="{{ asset('frontend') }}/#">Controller</a></li>
-                                        </ul>
-                                        <ul class="rating">
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <h3><a href="{{ asset('frontend') }}/shop-details.html">Xbox Controller</a></h3>
-                                    <h4 class="price">$19.00</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <div class="product-thumb">
-                                    <img src="{{ asset('frontend') }}/assets/img/product-5.png" alt="img">
-                                    <a href="{{ asset('frontend') }}/#" class="badge out-stock">Out Of Stock</a>
-                                    <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-inner">
-                                        <ul class="category">
-                                            <li><a href="{{ asset('frontend') }}/#">Chair</a></li>
-                                        </ul>
-                                        <ul class="rating">
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <h3><a href="{{ asset('frontend') }}/shop-details.html">Ergonomic Chair</a></h3>
-                                    <h4 class="price">$39.00</h4>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
 
                     <div class="swiper-nav swiper-next"><i class="las la-long-arrow-alt-right"></i></div>
@@ -351,7 +256,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <section class="blog-section">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">

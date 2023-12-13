@@ -16,12 +16,12 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <a href="{{ route('all.services') }}"
+                                <a href="{{ route('project.index') }}"
                                     class="btn btn-primary rounded-pill waves-effect waves-light"><i
-                                        class="fe-arrow-left"></i>All Service</a>
+                                        class="fe-arrow-left"></i>All Product</a>
                             </ol>
                         </div>
-                        <h4 class="page-title">Edit Services</h4>
+                        <h4 class="page-title">Edit Product</h4>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <p class="text-white" style="font-size: 20px">Edit Services</p>
+                            <p class="text-white" style="font-size: 20px">Edit Product</p>
 
                             <form id="myForm" method="post" action="{{ route('project.update', $edit_service->id) }}"
                                 enctype="multipart/form-data">

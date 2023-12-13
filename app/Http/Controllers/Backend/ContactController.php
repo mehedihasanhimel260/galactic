@@ -18,7 +18,6 @@ class ContactController extends Controller
 
     public function tech_web_contactdata_store(Request $request)
     {
-     
         $request->validate([
             'name_english' => 'required|max:200',
             'email' => 'required|unique:users|max:200',
@@ -26,7 +25,6 @@ class ContactController extends Controller
             'message_english' => 'required',
         ]);
         ContactUs::insert([
-            'sent_by' => Auth::user()->id,
             'name_english' => $request->name_english,
             'name_bangla' => $request->name_bangla,
             'phone' => $request->phone,

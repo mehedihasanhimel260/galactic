@@ -1,6 +1,6 @@
 @extends('admin_dashboard')
 @section('title')
-    Admin
+    Dashboard
 @endsection
 @section('admin')
     <div class="content">
@@ -14,11 +14,10 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <a href="{{ route('add.blogs') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Post</a>
+                                {{-- <a href="{{ route('add.team') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Team/Teacher </a> --}}
                             </ol>
                         </div>
-                        <h4 class="page-title">All Post</h4>
+                        <h4 class="page-title">All Team Members</h4>
                     </div>
                 </div>
             </div>
@@ -28,41 +27,36 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">All Post Table</h4>
+                            <h4 class="header-title py-2">All Team Members Table</h4>
 
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
                                         <th>SL</th>
                                         <th>Image</th>
-                                        <th>Title</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Email</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    @foreach ($blogs as $key => $item)
+                                    @foreach ($trunament_teams as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td><img src="{{ asset($item->main_image) }}" alt=""
-                                                    style="width:90px;height:80px"></td>
-                                            <td>{{ $item->title_english }}</td>
-
+                                            <td><img src="{{ asset($item->logo) }}" alt=""
+                                                    style="width:80px;height:80px"></td>
+                                            <td>{{ $item->team_name }}</td>
+                                            <td>{{ $item->tournament_name }}</td>
+                                            <td>{{ $item->number }}</td>
                                             <td>
-                                                @if ($item->status == '1')
-                                                    <a href="{{ route('blogs.inactive', $item->id) }}"
-                                                        class="badge rounded-pill p-2 "
-                                                        style="background: green;color:white;font-size:12px">Active</a>
-                                                @else
-                                                    <a href="{{ route('blogs.active', $item->id) }}"
-                                                        class="badge rounded-pill bg-danger p-2"
-                                                        style="font-size:12px;color:white">Deactive</a>
-                                                @endif
+                                               
                                             </td>
                                             <td>
-                                                <a href="{{ route('edit.blogs', $item->id) }}" class="btn btn-info">Edit</a>
-                                                <a href="{{ route('delete.blogs', $item->id) }}" id="delete"
+                                                <a href="{{ route('edit.team', $item->id) }}" class="btn btn-info">Edit</a>
+                                                <a href="{{ route('delete.team', $item->id) }}" id="delete"
                                                     class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>

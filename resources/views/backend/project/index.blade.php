@@ -15,10 +15,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('project.create') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add project</a>
+                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Product</a>
                             </ol>
                         </div>
-                        <h4 class="page-title">All project</h4>
+                        <h4 class="page-title">All Product</h4>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">All project Table</h4>
+                            <h4 class="header-title">All Product Table</h4>
 
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>

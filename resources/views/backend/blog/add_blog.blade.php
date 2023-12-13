@@ -47,13 +47,17 @@
                                             <input type="checkbox" name="recent_activity" value="2">
                                             <label for="recent_activity"> Is it Career Post ?</label><br>
                                         </div>
+                                        <div class="form-group mb-3">
+                                            <input type="checkbox" name="recent_activity" value="0">
+                                            <label for="recent_activity"> Is it Tunament Post ?</label><br>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
 
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
-                                            <label for="title_english" class="form-label">Blogs Title In English </label>
+                                            <label for="title_english" class="form-label"> Title In English </label>
                                             <input type="text" name="title_english" id="title_english"
                                                 class="form-control" placeholder="Blogs Title In English...">
 
@@ -61,7 +65,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Blogs Title In Bangla </label>
+                                            <label for="example-email" class="form-label"> Title In Bangla </label>
                                             <input type="text" id="title_bangla" name="title_bangla" class="form-control"
                                                 placeholder="Blogs Title In Bangla ...">
                                         </div>
@@ -90,7 +94,7 @@
 
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Blogs Short Description in English
+                                            <label for="example-email" class="form-label"> Short Description in English
                                             </label>
                                             <textarea name="short_des_eng" class="form-control" id="short_des_eng" cols="30" rows="5"
                                                 placeholder="Service Short Description English ...">
@@ -99,7 +103,7 @@
                                     </div>
                                     <div class="col-lg-12 ">
                                         <div class="form-group mb-3">
-                                            <label for="example-email" class="form-label">Blogs Short Description in Bangla
+                                            <label for="example-email" class="form-label"> Short Description in Bangla
                                             </label>
                                             <textarea name="short_des_bng" class="form-control" id="short_des_bng" cols="30" rows="5"
                                                 placeholder="Service Short Description Bangla ...">
@@ -107,7 +111,7 @@
                                         </div>
                                     </div>
 
-                                    <p class="text-white" style="font-size: 20px">Blogs Details Informantion</p>
+                                    <p class="text-white" style="font-size: 20px"> Details Informantion</p>
 
 
                                     <div class="col-lg-4">
@@ -146,7 +150,7 @@
 
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des1_eng" class="form-label">Blog Long Details-1
+                                            <label for="long_des1_eng" class="form-label"> Long Details-1
                                                 English</label>
                                             <textarea id="tinymce" class="editor form-control" col="10" row="15" name="long_des1_eng"></textarea>
 
@@ -155,7 +159,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des1_bng" class="form-label">Blog Long Details-1
+                                            <label for="long_des1_bng" class="form-label"> Long Details-1
                                                 Bangla</label>
                                             <textarea name="long_des1_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Service Long Details-1 Bangla...">
@@ -165,7 +169,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des2_eng" class="form-label">Blog Long Details-2
+                                            <label for="long_des2_eng" class="form-label"> Long Details-2
                                                 English</label>
                                             <textarea name="long_des2_eng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Service Long Details-2 English ...">
@@ -176,7 +180,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des2_bng" class="form-label">Blog Long Details-2
+                                            <label for="long_des2_bng" class="form-label"> Long Details-2
                                                 Bangla</label>
                                             <textarea name="long_des2_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Service Long Details-2 Bangla ...">
@@ -186,7 +190,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group">
-                                            <label for="long_des3_eng" class="form-label">Blog Long Details-3
+                                            <label for="long_des3_eng" class="form-label"> Long Details-3
                                                 English</label>
                                             <textarea name="long_des3_eng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Blog Long Details-3 English ...">
@@ -197,7 +201,7 @@
                                     </div>
                                     <div class="col-lg-12 mt-2">
                                         <div class="form-group mb-3">
-                                            <label for="long_des3_bng" class="form-label">Blog Long Details-3
+                                            <label for="long_des3_bng" class="form-label"> Long Details-3
                                                 Bangla</label>
                                             <textarea name="long_des3_bng" id="tinymce" class="editor form-control" cols="30" rows="15"
                                                 placeholder="Service Long Details-3 Bangla ...">

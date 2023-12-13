@@ -233,9 +233,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::resource('/admin/project', ProjectController::class);
     Route::resource('/team/gameing', TeamInfoController::class);
+    Route::get('admin/career/apply', [CareerController::class, 'index'])->name('tech_web_gaming_career_apply_index');
+    Route::get('admin/career/apply/{id}', [CareerController::class, 'destroy'])->name('tech_web_gaming_career_apply_destroy');
+    Route::get('admin/massage', [CareerController::class, 'tech_web_gaming_massage_index'])->name('tech_web_gaming_massage_index');
+    Route::get('admin/massage/{id}', [CareerController::class, 'delete_contuctus'])->name('deletcontuctus');
 
     Route::get('/admin/project/inactive/{id}', [ProjectController::class, 'tec_web_project_inactive'])->name('project.inactive');
     Route::get('/admin/project/active/{id}', [ProjectController::class, 'tec_web_project_active'])->name('project.active');
+    
 });
 
 // frontend all routes///////////////////////////////////////////////////////////////////////////
@@ -248,6 +253,7 @@ Route::get('/contact/us', [ContactController::class, 'tech_web_contact_us'])->na
 Route::post('/contactdata/store', [ContactController::class, 'tech_web_contactdata_store'])->name('contactdata.store');
 Route::get('/all/blogs/list', [BlogController::class, 'tech_web_all_blogs_list'])->name('all.blogs.list');
 Route::get('/all/recent-activity/list', [BlogController::class, 'tech_web_all_recent_activity_list'])->name('all.recent_activity.list');
+Route::get('/all/tunament/list', [BlogController::class, 'tech_web_all_tunament_list'])->name('all.tunament.list');
 Route::get('/blog/details/{id}', [BlogController::class, 'tech_web_blog_details'])->name('blog.details');
 Route::get('/packages', [ServiceController::class, 'tech_web_packages'])->name('packages');
 Route::get('/image-gallery', [GalleryController::class, 'tech_web_image_gallery'])->name('image.gallery');

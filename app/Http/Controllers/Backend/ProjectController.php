@@ -85,7 +85,7 @@ class ProjectController extends Controller
             'created_at' => Carbon::now(),
         ]);
         $notification = [
-            'message' => 'Services inserted Successfully!',
+            'message' => 'Product inserted Successfully!',
             'alert-type' => 'success',
         ];
         return redirect()
@@ -182,7 +182,7 @@ class ProjectController extends Controller
         Project::findOrFail($id)->update($data);
 
         $notification = [
-            'message' => 'Project Updated Successfully!',
+            'message' => 'Product Updated Successfully!',
             'alert-type' => 'success',
         ];
         return redirect()
@@ -216,7 +216,7 @@ class ProjectController extends Controller
 
         Project::findOrFail($id)->delete();
         $notification = [
-            'message' => 'Project Data Deleted!',
+            'message' => 'Product Data Deleted!',
             'alert-type' => 'error',
         ];
         return redirect()

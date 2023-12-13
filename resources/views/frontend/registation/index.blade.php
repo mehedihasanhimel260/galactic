@@ -21,7 +21,8 @@
             <div class="row">
                 <div class="col-lg-12 sm-padding">
                     <img id="output" />
-                    <form action="{{ route('gameing.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('gaming_team_registation_store') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <h2>Registration Details</h2>
                         <div class="checkout-form mb-30">
@@ -60,27 +61,27 @@
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_1" class="form-control"
-                                    placeholder="Player Name/UID  1" required>
+                                    placeholder="player 1:gmail,number, discord id" required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_2" class="form-control"
-                                    placeholder="Player Name/UID 2" required>
+                                    placeholder="player 2:gmail,number, discord id " required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_3" class="form-control"
-                                    placeholder="Player Name/UID 3" required>
+                                    placeholder="player 3:gmail,number, discord id " required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_4" class="form-control"
-                                    placeholder="Player Name/UID 4" required>
+                                    placeholder="player 4:gmail,number, discord id " required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_5" class="form-control"
-                                    placeholder="Player Name/UID 5" required>
+                                    placeholder="player 5:gmail,number, discord id " required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_6" class="form-control"
-                                    placeholder="Player Name/UID 6" required>
+                                    placeholder="player 6:gmail,number, discord id " required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="postcode" name="join_comunication_groupe" class="form-control"
@@ -92,6 +93,12 @@
                             <div class="form-field">
                                 <textarea id="message" name="additional" cols="30" rows="3" class="form-control"
                                     placeholder="Order Note"></textarea>
+                            </div>
+                        </div>
+                        <div class="checkout-form mb-30">
+                            <div class="form-field">
+                                <input type="password" id="postcode" name="password" class="form-control"
+                                    placeholder="Password" required>
                             </div>
                         </div>
                         <div class="payment-method">

@@ -216,4 +216,9 @@ class BlogController extends Controller
         $blogs = Blog::where('recent_activity', 1)->paginate(4);
         return view('frontend.recent-activity.index', compact('blogs'));
     }
+    public function tech_web_all_tunament_list()
+    {
+        $blogs = Blog::where('recent_activity', 0)->paginate(4);
+        return view('frontend.blog.tunament', compact('blogs'));
+    }
 }

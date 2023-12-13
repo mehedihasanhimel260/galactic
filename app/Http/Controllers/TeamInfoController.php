@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\TeamInfo;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 class TeamInfoController extends Controller
 {
     /**
@@ -12,7 +12,8 @@ class TeamInfoController extends Controller
      */
     public function index()
     {
-        //
+        $trunament_teams = TeamInfo::get();
+        return view('backend.trunament-team.index', compact('trunament_teams'));
     }
 
     /**
@@ -26,19 +27,28 @@ class TeamInfoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function tech_web_gaming_team_registation_store(Request $request)
     {
         $input = $request->all();
+
+        $TeamInfo = new User();
+        $TeamInfo->password = $input['password'];
+        $TeamInfo->name = $input['tournament_name'];
+        $TeamInfo->phone = $input['number'];
+        $TeamInfo->role = 'user';
+        $TeamInfo->email = $input['email'];
+        $TeamInfo->save();
+
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
             $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
             $image->move('backend/teamlogo/', $image_name);
             $input['logo'] = 'backend/teamlogo/' . $image_name;
         }
-
+        $input = $request->except('password');
         TeamInfo::create($input);
         $notification = [
-            'message' => 'Message Send Successfully!',
+            'message' => 'Ragistation Successfully!',
             'alert-type' => 'success',
         ];
         return redirect()
