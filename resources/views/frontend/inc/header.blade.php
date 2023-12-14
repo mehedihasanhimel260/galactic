@@ -66,9 +66,11 @@
         </div>
     </div>
 </header>
+@php
+    $notice = \App\Models\Notice::get();
+@endphp
 <marquee behavior="scroll" direction="left">
-    <p style="float: left;margin-right: 10px; ">HTML marquee 1... </p>
-    <p style="float: left;margin-right: 10px;">HTML marquee 2... </p>
-    <p style="float: left;margin-right: 10px;">HTML marquee 3... </p>
-    <p style="float: left;margin-right: 10px;">HTML marquee 4... </p>
+    @foreach ($notice as $notic)
+        <p style="float: left;margin-right: 10px; ">{!! $notic->short_des_eng !!}</p>
+    @endforeach
 </marquee>

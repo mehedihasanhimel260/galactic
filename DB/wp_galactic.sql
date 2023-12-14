@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 13, 2023 at 12:02 PM
+-- Generation Time: Dec 14, 2023 at 12:07 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -111,7 +111,8 @@ INSERT INTO `blogs` (`id`, `title_english`, `title_bangla`, `short_des_eng`, `sh
 (2, 'Et in necessitatibus', 'Ex quia et tempor qu', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', 1, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', NULL, 'backend/blogs/main_image/1785051379067621.jpg', 'backend/blogs/banner_image/1785051379111545.jpg', 'backend/blogs/details_images/1785051379151104.jpg', NULL, NULL, 1, 0, '2023-12-11 23:07:33', '2023-12-11 23:08:28'),
 (3, 'Sit consequat Fugi', 'Vitae ad tempor in c', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit ornare tristique varius id ante, eleifend hac sed aliquam faucibus iaculis tincidunt etiam ridiculus erat praesent. Cursus natoque enim semper mi cras proin habitasse dictum parturient mattis quisque nunc, vitae nec suscipit class torquent non rutrum erat a curabitur consequat. Nisl ante aliquam feugiat dui imperdiet dis tristique convallis, commodo velit taciti aenean non pellentesque sed vestibulum phasellus, sociis mi cursus scelerisque laoreet odio vivamus. Quis luctus pharetra hendrerit nisl ultrices massa ut, elementum suspendisse porttitor eu aliquet fringilla habitant facilisi, congue posuere feugiat conubia cras vulputate.</p>', NULL, NULL, 'backend/blogs/main_image/1785051428898249.jpg', 'backend/blogs/banner_image/1785051428940902.jpg', 'backend/blogs/details_images/1785051428980746.jpg', NULL, NULL, 1, 0, '2023-12-11 23:08:21', '2023-12-12 01:33:03'),
 (4, 'Ea officia vel labor', 'Quaerat doloribus vo', '<p>Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque feugiat sapien nascetur. Sed curae massa morbi congue vehicula, mi vulputate venenatis nunc varius justo, luctus ac in condimentum. At nisi nulla ullamcorper praesent penatibus torquent neque, tellus posuere est lectus magnis sodales commodo euismod, nunc et placerat diam scelerisque dapibus. Rhoncus hac natoque luctus vel viverra mauris laoreet egestas dapibus urna aptent, curabitur praesent lectus nisl aenean turpis erat augue in class. Phasellus porta cras potenti sagittis enim suspendisse euismod, urna imperdiet maecenas vel nascetur justo rutrum, interdum est iaculis vehicula erat quis. Congue risus netus pretium accumsan euismod, augue cum orci tempus gravida, dui interdum scelerisque rutrum.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque feugiat sapien nascetur. Sed curae massa morbi congue vehicula, mi vulputate venenatis nunc varius justo, luctus ac in condimentum. At nisi nulla ullamcorper praesent penatibus torquent neque, tellus posuere est lectus magnis sodales commodo euismod, nunc et placerat diam scelerisque dapibus. Rhoncus hac natoque luctus vel viverra mauris laoreet egestas dapibus urna aptent, curabitur praesent lectus nisl aenean turpis erat augue in class. Phasellus porta cras potenti sagittis enim suspendisse euismod, urna imperdiet maecenas vel nascetur justo rutrum, interdum est iaculis vehicula erat quis. Congue risus netus pretium accumsan euismod, augue cum orci tempus gravida, dui interdum scelerisque rutrum.</p>', 2, '<p>Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque feugiat sapien nascetur. Sed curae massa morbi congue vehicula, mi vulputate venenatis nunc varius justo, luctus ac in condimentum. At nisi nulla ullamcorper praesent penatibus torquent neque, tellus posuere est lectus magnis sodales commodo euismod, nunc et placerat diam scelerisque dapibus. Rhoncus hac natoque luctus vel viverra mauris laoreet egestas dapibus urna aptent, curabitur praesent lectus nisl aenean turpis erat augue in class. Phasellus porta cras potenti sagittis enim suspendisse euismod, urna imperdiet maecenas vel nascetur justo rutrum, interdum est iaculis vehicula erat quis. Congue risus netus pretium accumsan euismod, augue cum orci tempus gravida, dui interdum scelerisque rutrum.</p>', NULL, NULL, NULL, NULL, NULL, 'backend/blogs/main_image/1785145016535635.jpg', 'backend/blogs/banner_image/1785145016913529.jpg', 'backend/blogs/details_images/1785145016933575.jpg', NULL, NULL, 1, 0, '2023-12-12 23:55:53', '2023-12-12 23:57:05'),
-(5, 'Est aute aut nihil', 'Magna ex cupidatat n', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', 0, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', NULL, NULL, NULL, NULL, NULL, 'backend/blogs/main_image/1785156569688045.jpg', 'backend/blogs/banner_image/1785156570042839.jpg', 'backend/blogs/details_images/1785156570080744.jpg', NULL, NULL, 1, 0, '2023-12-13 02:59:31', '2023-12-13 02:59:34');
+(5, 'Est aute aut nihil', 'Magna ex cupidatat n', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', 0, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nisl natoque condimentum nam commodo, ligula luctus quam convallis conubia a eleifend et mus vel. Pellentesque maecenas vivamus praesent fringilla porttitor placerat scelerisque accumsan, est mattis nullam eu litora augue nisi turpis, senectus luctus sem tincidunt at ultrices interdum. Pharetra sed ridiculus laoreet in primis et libero, erat nam neque integer mus purus quis, habitasse conubia habitant hendrerit sociis tincidunt. Cubilia varius sodales pretium rutrum malesuada id sollicitudin erat sagittis, justo bibendum maecenas placerat donec elementum gravida semper hendrerit, quis egestas mauris aenean mi curae duis eu. Egestas dapibus potenti vivamus curae sagittis vel, felis lacinia ullamcorper ut id purus, phasellus turpis dictumst netus proin. Condimentum tristique varius aliquam himenaeos ultricies sagittis eros, vulputate dictumst dui fringilla ultrices sapien interdum praesent, eleifend cursus hac dapibus curabitur magna. Leo mus dictumst turpis montes natoque nullam fusce quis himenaeos nunc, aenean vivamus congue felis gravida justo habitasse molestie aliquet suspendisse lectus, malesuada senectus pharetra ornare sagittis maecenas est donec commodo.</p>', NULL, NULL, NULL, NULL, NULL, 'backend/blogs/main_image/1785156569688045.jpg', 'backend/blogs/banner_image/1785156570042839.jpg', 'backend/blogs/details_images/1785156570080744.jpg', NULL, NULL, 1, 0, '2023-12-13 02:59:31', '2023-12-13 02:59:34'),
+(6, 'Sit occaecat in et', 'Facere enim elit is', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ante habitant nunc non augue dignissim venenatis nisi,</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ante habitant nunc non augue dignissim venenatis nisi,</p>', 0, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ante habitant nunc non augue dignissim venenatis nisi, vitae class suspendisse maecenas primis semper. Aenean facilisis cubilia placerat nibh dui libero dignissim augue porttitor hac torquent, neque maecenas faucibus dis id sed est quis felis tempor quisque bibendum, platea senectus at montes habitasse lacinia justo posuere blandit sociis. Eget pulvinar vulputate torquent nascetur purus blandit sem, euismod posuere sociosqu eleifend justo molestie duis, vitae nec donec fames dui nulla. Ante ornare placerat nec tortor id ridiculus ultrices condimentum dictum cursus, velit praesent et rhoncus bibendum felis donec nulla ullamcorper magnis vivamus, pulvinar fames nascetur parturient morbi proin posuere nam montes. Vel duis non class sagittis venenatis tempor a vulputate condimentum hendrerit ultrices integer, natoque massa facilisi fames libero odio quam at dictumst velit pharetra. Mus montes auctor neque aliquam ligula curae condimentum senectus imperdiet nunc aptent, cursus sem magnis sociis orci cum netus at venenatis. Odio eros vulputate himenaeos neque posuere metus, rutrum sem curabitur ullamcorper convallis nulla, at habitasse venenatis volutpat dis. Tincidunt ante interdum tristique massa posuere magnis diam id fringilla ut nascetur inceptos, erat natoque purus et odio quam arcu donec fermentum in.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ante habitant nunc non augue dignissim venenatis nisi, vitae class suspendisse maecenas primis semper. Aenean facilisis cubilia placerat nibh dui libero dignissim augue porttitor hac torquent, neque maecenas faucibus dis id sed est quis felis tempor quisque bibendum, platea senectus at montes habitasse lacinia justo posuere blandit sociis. Eget pulvinar vulputate torquent nascetur purus blandit sem, euismod posuere sociosqu eleifend justo molestie duis, vitae nec donec fames dui nulla. Ante ornare placerat nec tortor id ridiculus ultrices condimentum dictum cursus, velit praesent et rhoncus bibendum felis donec nulla ullamcorper magnis vivamus, pulvinar fames nascetur parturient morbi proin posuere nam montes. Vel duis non class sagittis venenatis tempor a vulputate condimentum hendrerit ultrices integer, natoque massa facilisi fames libero odio quam at dictumst velit pharetra. Mus montes auctor neque aliquam ligula curae condimentum senectus imperdiet nunc aptent, cursus sem magnis sociis orci cum netus at venenatis. Odio eros vulputate himenaeos neque posuere metus, rutrum sem curabitur ullamcorper convallis nulla, at habitasse venenatis volutpat dis. Tincidunt ante interdum tristique massa posuere magnis diam id fringilla ut nascetur inceptos, erat natoque purus et odio quam arcu donec fermentum in.</p>', NULL, NULL, NULL, NULL, 'backend/blogs/main_image/1785241258480147.jpg', 'backend/blogs/banner_image/1785241258913181.jpg', 'backend/blogs/details_images/1785241258953752.jpg', NULL, NULL, 1, 0, '2023-12-14 01:25:37', '2023-12-14 01:25:40');
 
 -- --------------------------------------------------------
 
@@ -274,6 +275,29 @@ INSERT INTO `footers` (`id`, `footer_details_eng`, `footer_details_bng`, `copy_r
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `heros`
+--
+
+CREATE TABLE `heros` (
+  `id` bigint UNSIGNED NOT NULL,
+  `heros_short` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heros_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heros_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `heros`
+--
+
+INSERT INTO `heros` (`id`, `heros_short`, `heros_title`, `heros_image`, `video`, `created_at`, `updated_at`) VALUES
+(1, 'Provident non debit', 'Aut et dolore praese', 'backend/teamlogo/657aec6286563_1702554722.png', 'Deserunt quia quis d', '2023-12-14 05:39:02', '2023-12-14 05:52:02');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `image_galleries`
 --
 
@@ -306,13 +330,14 @@ INSERT INTO `image_galleries` (`id`, `image`, `status`, `add_home`, `created_at`
 
 CREATE TABLE `logos` (
   `id` bigint UNSIGNED NOT NULL,
-  `site_name_english` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `site_name_bangla` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `admin_logo_image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `frontend_logo_image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `frontend_footer_image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `favicon_image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `site_name_english` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `site_name_bangla` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin_logo_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bg_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frontend_logo_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frontend_footer_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favicon_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -321,8 +346,8 @@ CREATE TABLE `logos` (
 -- Dumping data for table `logos`
 --
 
-INSERT INTO `logos` (`id`, `site_name_english`, `site_name_bangla`, `admin_logo_image`, `frontend_logo_image`, `frontend_footer_image`, `favicon_image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'theratio', 'theratio', 'backend/logo/1784240510889964.png', 'backend/logo/1784240511294403.png', 'backend/logo/1784240511304406.png', 'backend/logo/1784240511314488.png', '0', '2023-11-03 22:40:52', '2023-12-03 00:19:09');
+INSERT INTO `logos` (`id`, `site_name_english`, `site_name_bangla`, `admin_logo_image`, `bg_image`, `frontend_logo_image`, `frontend_footer_image`, `favicon_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, 'backend/logo/1785249678973248.png', 'backend/logo/1785250033503885.jpg', 'backend/logo/1785249679347736.png', 'backend/logo/1785249679367399.png', 'backend/logo/1785249679389265.jpg', '0', '2023-12-14 03:39:27', '2023-12-14 03:45:05');
 
 -- --------------------------------------------------------
 
@@ -346,7 +371,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2019_08_19_000000_create_failed_jobs_table', 1),
 (18, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (19, '2023_10_21_065218_create_banner_and_titles_table', 1),
-(20, '2023_10_22_063533_create_logos_table', 1),
 (21, '2023_10_22_085429_create_website_links_table', 1),
 (22, '2023_10_22_103212_create_website_banners_table', 1),
 (23, '2023_10_23_050602_create_footers_table', 1),
@@ -366,7 +390,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (39, '2023_10_29_070937_create_video_galleries_table', 9),
 (41, '2023_10_27_125514_create_blogs_table', 10),
 (43, '2023_12_12_083811_create_team_infos_table', 11),
-(45, '2023_12_13_052301_create_careers_table', 12);
+(45, '2023_12_13_052301_create_careers_table', 12),
+(46, '2023_12_14_055326_create_trunament_rankings_table', 13),
+(47, '2023_10_22_063533_create_logos_table', 14),
+(48, '2023_12_14_111203_create_heros_table', 15);
 
 -- --------------------------------------------------------
 
@@ -386,6 +413,13 @@ CREATE TABLE `notices` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notices`
+--
+
+INSERT INTO `notices` (`id`, `pdf_file`, `short_des_eng`, `short_des_bng`, `long_des_eng`, `long_des_bng`, `status`, `add_home`, `created_at`, `updated_at`) VALUES
+(1, 'backend/notice/202312141103.jpg', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque sed, fusce iaculis rhoncus nisi class vehicula bibendum malesuada fringilla duis, nibh torquent lacus velit volutpat condimentum orci est. Orci consequat justo egestas integer et commodo natoque, convallis parturient nullam semper pellentesque libero, sapien torquent dui metus himenaeos sollicitudin. Auctor facilisis nascetur pharetra tempus elementum phasellus sagittis fusce feugiat, mattis enim felis hac lacinia a tempor nisl justo, imperdiet neque suscipit leo taciti hendrerit orci aliquam. Laoreet rhoncus sollicitudin montes parturient conubia bibendum netus lectus, morbi aliquet venenatis ante mollis varius sociosqu risus accumsan, a cum congue dictumst eleifend ridiculus fermentum. Viverra aliquam vehicula convallis at ridiculus proin nam ultrices id, cursus velit purus potenti vitae aliquet hac nascetur, sapien quisque felis metus malesuada condimentum sodales morbi. Senectus blandit nam hendrerit quisque arcu tortor rhoncus maecenas sapien penatibus parturient dictumst, litora habitant in augue ullamcorper sodales lacus at justo accumsan conubia. Primis luctus rutrum viverra senectus quam ultricies vitae curabitur, nascetur fermentum eget odio sociosqu hendrerit inceptos aliquam, pellentesque faucibus risus dictum dis platea fames.</p>', NULL, NULL, NULL, 1, 0, '2023-12-14 05:03:22', '2023-12-14 05:03:32');
 
 -- --------------------------------------------------------
 
@@ -627,10 +661,8 @@ CREATE TABLE `team_infos` (
 --
 
 INSERT INTO `team_infos` (`id`, `team_name`, `link`, `logo`, `tournament_name`, `email`, `number`, `player_name_1`, `player_name_2`, `player_name_3`, `player_name_4`, `player_name_5`, `player_name_6`, `join_comunication_groupe`, `additional`, `created_at`, `updated_at`) VALUES
-(8, 'Kirk', 'Chavez', 'backend/teamlogo/6578444740d70_1702380615.png', 'Jonah Berry', 'laromal@mailinator.com', '589', 'Jenette Horton', 'Neve Ramsey', 'Rhoda Martin', 'Lilah Jordan', 'Kendall Moore', 'Winifred Small', 'Veritatis commodo do', 'Velit mollitia et de', '2023-12-12 05:30:15', '2023-12-12 05:30:15'),
-(9, 'Beau', 'Head', 'backend/teamlogo/657995b699f5a_1702466998.png', 'Jesse Noble', 'jupa@mailinator.com', '693', 'Elaine Holmes', 'Velma Holman', 'Tyrone Strong', 'Nash Mcdaniel', 'Kimberley Byers', 'Zena Ford', 'Pa$$w0rd!', 'Quis perspiciatis a', '2023-12-13 05:29:58', '2023-12-13 05:29:58'),
-(10, 'Eden', 'Hess', 'backend/teamlogo/6579963020639_1702467120.png', 'Yetta English', 'zazuvaq@mailinator.com', '127', 'Imani Snider', 'Lesley Hobbs', 'Rafael Marshall', 'Abdul Hester', 'Chancellor Christian', 'Jena Alexander', 'Pa$$w0rd!', 'Enim quis debitis es', '2023-12-13 05:32:00', '2023-12-13 05:32:00'),
-(11, 'Todd', 'Brooks', 'C:\\Users\\USER\\AppData\\Local\\Temp\\phpD831.tmp', 'Imogene Curry', 'user6@user.com', '3', 'Ignatius Wiggins', 'Bell Dunlap', 'Joelle Oneil', 'Jasper Moore', 'Amy Harvey', 'Athena Dejesus', 'Cillum iure fugiat', 'Aliquam corrupti at', '2023-12-13 06:00:18', '2023-12-13 06:00:18');
+(15, 'Kibo', 'Richards', 'C:\\Users\\USER\\AppData\\Local\\Temp\\phpF5DC.tmp', '5', 'kenaq@mailinator.com', '547', 'Reese Petersen', 'Audra Roth', 'Ursula Moody', 'Kato Mcpherson', 'Myra Wong', 'Baker Grant', 'Voluptate eum ipsa', 'Suscipit exercitatio', '2023-12-14 01:06:48', '2023-12-14 01:06:48'),
+(16, 'Rose', 'Munoz', 'C:\\Users\\USER\\AppData\\Local\\Temp\\php36F3.tmp', '6', 'cura@mailinator.com', '161', 'Callie Hicks', 'Neville Sosa', 'Portia Edwards', 'Ebony Thompson', 'Brett Garrison', 'Francesca Franks', 'Anim possimus sed e', 'Ea commodi veniam e', '2023-12-14 01:27:07', '2023-12-14 01:27:07');
 
 -- --------------------------------------------------------
 
@@ -691,6 +723,30 @@ CREATE TABLE `testimonials` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `trunament_rankings`
+--
+
+CREATE TABLE `trunament_rankings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `trunament_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `team_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ranking_number` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `trunament_rankings`
+--
+
+INSERT INTO `trunament_rankings` (`id`, `trunament_id`, `team_id`, `ranking_number`, `comment`, `created_at`, `updated_at`) VALUES
+(2, '5', '15', '1', 'top', '2023-12-14 03:01:28', '2023-12-14 03:01:28'),
+(3, '6', '16', '1', 'top', '2023-12-14 03:01:41', '2023-12-14 03:01:41');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -718,7 +774,15 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `phone`, `photo`, `address`,
 (4, 'User', 'user@user.com', 'user', '01738920277', NULL, NULL, NULL, '$2y$10$nfPv7p0JtkLz7GdVYMykkeeksIRF6vqIFjgPSYh7pKWlq8hpJDOxm', NULL, NULL, NULL),
 (5, 'Ryan Powers', 'user2@user.com', 'user', '+1 (257) 622-5575', NULL, NULL, NULL, '$2y$10$3Yk53p4axoseBGipFETXnu1/2qhtyCycU.SbRUKXbiGBt4gw5UtwK', NULL, '2023-12-13 04:58:28', '2023-12-13 04:58:28'),
 (6, 'Desirae Knox', 'vacux@mailinator.com', 'user', '+1 (915) 823-6326', NULL, NULL, NULL, '$2y$10$fD.boSgqfFUCuWq5TOtAyukzONPlxrtVi2aYBh2ZY98vy/yC2hkvu', NULL, '2023-12-13 05:07:49', '2023-12-13 05:07:49'),
-(7, 'Imogene Curry', 'user6@user.com', 'user', '3', NULL, NULL, NULL, '$2y$10$xNdDNDYXawTNqFdDGQzmi.x0CxINc4ZrVUIPBPfT8Wbsgxg47jbbe', NULL, '2023-12-13 06:00:18', '2023-12-13 06:00:18');
+(7, 'Imogene Curry', 'user6@user.com', 'user', '3', NULL, NULL, NULL, '$2y$10$xNdDNDYXawTNqFdDGQzmi.x0CxINc4ZrVUIPBPfT8Wbsgxg47jbbe', NULL, '2023-12-13 06:00:18', '2023-12-13 06:00:18'),
+(8, 'Clarke Noble', 'razowovir@mailinator.com', 'user', '+1 (257) 419-2641', NULL, NULL, NULL, '$2y$10$GjRY2uVkMhgKIhYJjt1Dhu3RSjEJoaN3d1o31w7Pw37JXy7dbK8jm', NULL, '2023-12-13 22:23:51', '2023-12-13 22:23:51'),
+(9, 'MacKensie Holloway', 'user7@user.com', 'user', '662', NULL, NULL, NULL, '$2y$10$.to6vtsfAaE5FZolcQAoHuFsic0uRVx0N4FA.i6m3de8eRQLXTATW', NULL, '2023-12-13 22:24:43', '2023-12-13 22:24:43'),
+(10, 'Mason Maddox', 'user10@user.com', 'user', '695', NULL, NULL, NULL, '$2y$10$hiDt599AOkmpNRpZ1QqZg.EipNqCANkU.UqN7dZiyx2tE.Pr8hHlu', NULL, '2023-12-13 22:40:53', '2023-12-13 22:40:53'),
+(11, 'Brenda Mueller', 'tazenafo@mailinator.com', 'user', '237', NULL, NULL, NULL, '$2y$10$GzGe4qPVnN5MKikcAq3NHOPyBlhSlp5WIAr.KVWYbiMUXkrq6opzq', NULL, '2023-12-13 22:43:29', '2023-12-13 22:43:29'),
+(12, 'Lance Decker', 'lyqah@mailinator.com', 'user', '701', NULL, NULL, NULL, '$2y$10$f0k/fGJWIrW4s.srNaHW7u78xg5Qv5Qo1ex8YUmb1BP51mcUTzB6i', NULL, '2023-12-13 22:44:42', '2023-12-13 22:44:42'),
+(13, 'Camille Glass', 'xefuv@mailinator.com', 'user', '781', NULL, NULL, NULL, '$2y$10$GKHAButxHzOoNQrTvOGt9uvQ8D51YsoLJ8OzOWqaB0HKU8Oq.jLKq', NULL, '2023-12-13 22:46:39', '2023-12-13 22:46:39'),
+(14, '5', 'kenaq@mailinator.com', 'user', '547', NULL, NULL, NULL, '$2y$10$.0w1jYtuFu2yuaCmwGr4V.prJnyxBlaqaN8uJOQ3GWQ68v/jYutn6', NULL, '2023-12-14 01:06:48', '2023-12-14 01:06:48'),
+(15, '6', 'cura@mailinator.com', 'user', '161', NULL, NULL, NULL, '$2y$10$fsE/YUl.wPtOdmKOEMsXNOkYhZMMzKW05zt8UoPtkqO04iHx0VPSe', NULL, '2023-12-14 01:27:07', '2023-12-14 01:27:07');
 
 -- --------------------------------------------------------
 
@@ -854,6 +918,12 @@ ALTER TABLE `footers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `heros`
+--
+ALTER TABLE `heros`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `image_galleries`
 --
 ALTER TABLE `image_galleries`
@@ -940,6 +1010,12 @@ ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `trunament_rankings`
+--
+ALTER TABLE `trunament_rankings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -984,7 +1060,7 @@ ALTER TABLE `banner_and_titles`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `careers`
@@ -1023,6 +1099,12 @@ ALTER TABLE `footers`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `heros`
+--
+ALTER TABLE `heros`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `image_galleries`
 --
 ALTER TABLE `image_galleries`
@@ -1038,13 +1120,13 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1086,7 +1168,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `team_infos`
 --
 ALTER TABLE `team_infos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `testimonial2s`
@@ -1101,10 +1183,16 @@ ALTER TABLE `testimonials`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `trunament_rankings`
+--
+ALTER TABLE `trunament_rankings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `video_galleries`

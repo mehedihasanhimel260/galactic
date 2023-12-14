@@ -40,6 +40,22 @@
                     </div>
                 </li>
 
+
+                <li>
+                    <a href="#sidebarHeros" data-bs-toggle="collapse">
+                        <i class="fe-settings me-1"></i>
+                        <span>Heros Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarHeros">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('heros-section.index') }}">Heros Setting</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li>
                     <a href="#sidebarSlider" data-bs-toggle="collapse">
                         <i class="fe-settings me-1"></i>

@@ -9,4 +9,5 @@ then:<br>
 npm i<br>
 then:<br>
 npm run dev<br>
-php artisan migrate:refresh --path='./database/migrations/2023_10_22_063533_create_logos_table.php'
+php artisan migrate:refresh --path='./database/migrations/2023_12_14_111203_create_heros_table.php' <br>
+php artisan route:list --name=account
