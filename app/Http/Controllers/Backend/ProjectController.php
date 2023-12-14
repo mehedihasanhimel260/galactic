@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 
 use App\Models\Project;
+use App\Models\WebsiteLink;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
@@ -226,6 +227,7 @@ class ProjectController extends Controller
 
     public function tech_web_project_details($id)
     {
+        $website = WebsiteLink::latest()->first();
         $blog_details = Project::findOrFail($id);
         $blogs = Project::get();
         $previousPost = Project::where('id', '<', $blog_details->id)
@@ -234,6 +236,6 @@ class ProjectController extends Controller
         $nextPost = Project::where('id', '>', $blog_details->id)
             ->orderBy('id', 'asc')
             ->first();
-        return view('frontend.project.index', compact('blog_details', 'blogs', 'nextPost', 'previousPost'));
+        return view('frontend.shop-details.single', compact('blog_details', 'blogs', 'nextPost', 'previousPost', 'website'));
     }
 }

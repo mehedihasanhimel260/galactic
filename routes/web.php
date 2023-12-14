@@ -240,7 +240,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/admin/project/inactive/{id}', [ProjectController::class, 'tec_web_project_inactive'])->name('project.inactive');
     Route::get('/admin/project/active/{id}', [ProjectController::class, 'tec_web_project_active'])->name('project.active');
-    
 });
 
 // frontend all routes///////////////////////////////////////////////////////////////////////////
@@ -258,7 +257,7 @@ Route::get('/blog/details/{id}', [BlogController::class, 'tech_web_blog_details'
 Route::get('/packages', [ServiceController::class, 'tech_web_packages'])->name('packages');
 Route::get('/image-gallery', [GalleryController::class, 'tech_web_image_gallery'])->name('image.gallery');
 Route::get('/video-gallery', [GalleryController::class, 'tech_web_video_gallery'])->name('video.gallery');
-Route::get('/project-details/{id}', [ProjectController::class, 'tech_web_project_details'])->name('project.details');
+Route::get('/product-details/{id}', [ProjectController::class, 'tech_web_project_details'])->name('project.details');
 Route::post('/team/registation', [TeamInfoController::class, 'tech_web_gaming_team_registation_store'])->name('gaming_team_registation_store');
 Route::get('/team/registation', [TeamInfoController::class, 'tech_web_gaming_team_registation'])->name('gaming_team_registation');
 Route::get('/career/apply', [CareerController::class, 'tech_web_gaming_career_apply'])->name('tech_web_gaming_career_apply');

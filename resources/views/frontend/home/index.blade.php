@@ -225,7 +225,8 @@
                                     <div class="product-thumb">
                                         <img src="{{ asset($project->main_image) }}" alt="img">
                                         {{-- <a href="{{ asset('frontend') }}/#" class="badge in-stock"></a> --}}
-                                        <a href="{{ asset('frontend') }}/cart.html" class="default-btn">Add To Cart</a>
+                                        <a href="{{ route('project.details',$project->id) }}"
+                                            class="default-btn">Details</a>
                                     </div>
                                     <div class="product-info">
                                         {{-- <div class="product-inner">
@@ -241,7 +242,7 @@
                                             </ul>
                                         </div> --}}
                                         <h3><a
-                                                href="{{ asset('frontend') }}/shop-details.html">{{ $project->title_english }}</a>
+                                                href="{{ route('project.details',$project->id) }}">{{ $project->title_english }}</a>
                                         </h3>
                                         <h4 class="price">${{ $project->price }}</h4>
                                     </div>

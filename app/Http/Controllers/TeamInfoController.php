@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\TeamInfo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 class TeamInfoController extends Controller
@@ -97,6 +97,7 @@ class TeamInfoController extends Controller
     }
     public function tech_web_gaming_team_registation()
     {
-        return view('frontend.registation.index');
+        $trunaments = Blog::where('recent_activity', 0)->get();
+        return view('frontend.registation.index', compact('trunaments'));
     }
 }

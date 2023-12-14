@@ -48,8 +48,15 @@
                                 };
                             </script>
                             <div class="form-field">
-                                <input type="text" id="country" name="tournament_name" class="form-control"
-                                    placeholder="Tournament Name" required>
+                                <select class="form-control " name="tournament_name"
+                                    style="background-color:rgba(255,255,255,.1) !importent; ;">
+
+                                    <option value="" disabled selected>Open this select Tournament Name</option>
+
+                                    @foreach ($trunaments as $trunament)
+                                        <option value="{{ $trunament->id }}">{{ $trunament->title_english }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="city" name="email" class="form-control" placeholder="email"
