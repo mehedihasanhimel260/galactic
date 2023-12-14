@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\TeamInfo;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\RedirectResponse;
 class TeamInfoController extends Controller
 {
     /**
@@ -27,18 +32,20 @@ class TeamInfoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function tech_web_gaming_team_registation_store(Request $request)
+    public function tech_web_gaming_team_registation_store(Request $request): RedirectResponse
     {
         $input = $request->all();
 
-        $TeamInfo = new User();
-        $TeamInfo->password = $input['password'];
-        $TeamInfo->name = $input['tournament_name'];
-        $TeamInfo->phone = $input['number'];
-        $TeamInfo->role = 'user';
-        $TeamInfo->email = $input['email'];
-        $TeamInfo->save();
+        $user = User::create([
+            'name' => $input['tournament_name'],
+            'email' => $input['email'],
+            'role' => 'user',
+            'phone' => $input['number'], //this was updated by me;
+            'password' => Hash::make($request->password),
+        ]);
+        event(new Registered($user));
 
+        Auth::login($user);
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
             $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
@@ -47,6 +54,7 @@ class TeamInfoController extends Controller
         }
         $input = $request->except('password');
         TeamInfo::create($input);
+
         $notification = [
             'message' => 'Ragistation Successfully!',
             'alert-type' => 'success',
