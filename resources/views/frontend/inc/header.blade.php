@@ -61,6 +61,14 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </header>
+<marquee behavior="scroll" direction="left">
+    <p style="float: left;margin-right: 10px; ">HTML marquee 1... </p>
+    <p style="float: left;margin-right: 10px;">HTML marquee 2... </p>
+    <p style="float: left;margin-right: 10px;">HTML marquee 3... </p>
+    <p style="float: left;margin-right: 10px;">HTML marquee 4... </p>
+</marquee>

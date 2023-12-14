@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\TeamInfoController;
+use App\Http\Controllers\TrunamentRankingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -233,10 +234,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::resource('/admin/project', ProjectController::class);
     Route::resource('/team/gameing', TeamInfoController::class);
+    Route::resource('/admin/team/ranking', TrunamentRankingController::class);
+    Route::get('/admin-team-data', [TrunamentRankingController::class, 'get_team_data'])->name('get_team_data');
     Route::get('admin/career/apply', [CareerController::class, 'index'])->name('tech_web_gaming_career_apply_index');
-    Route::get('admin/career/apply/{id}', [CareerController::class, 'destroy'])->name('tech_web_gaming_career_apply_destroy');
-    Route::get('admin/massage', [CareerController::class, 'tech_web_gaming_massage_index'])->name('tech_web_gaming_massage_index');
-    Route::get('admin/massage/{id}', [CareerController::class, 'delete_contuctus'])->name('deletcontuctus');
+    Route::get('/admin/career/apply/{id}', [CareerController::class, 'destroy'])->name('tech_web_gaming_career_apply_destroy');
+    Route::get('/admin/massage', [CareerController::class, 'tech_web_gaming_massage_index'])->name('tech_web_gaming_massage_index');
+    Route::get('/admin/massage/{id}', [CareerController::class, 'delete_contuctus'])->name('deletcontuctus');
 
     Route::get('/admin/project/inactive/{id}', [ProjectController::class, 'tec_web_project_inactive'])->name('project.inactive');
     Route::get('/admin/project/active/{id}', [ProjectController::class, 'tec_web_project_active'])->name('project.active');

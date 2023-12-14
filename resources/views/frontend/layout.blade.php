@@ -8,6 +8,17 @@
 
 @include('frontend.inc.head')
 
+@php
+    $logos = App\Models\Logo::latest()->first();
+@endphp
+<style>
+    body {
+        background-image: url('{{ asset($logos->bg_image) }}');
+
+    }
+</style>
+
+
 <body>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="{{ asset('frontend') }}/http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -26,42 +37,38 @@
     @include('frontend.inc.script')
 
     <script>
-        @if(Session::has('message'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.success("{{ session('message') }}");
+        @if (Session::has('message'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.success("{{ session('message') }}");
         @endif
-      
-        @if(Session::has('error'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.error("{{ session('error') }}");
+
+        @if (Session::has('error'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('error') }}");
         @endif
-      
-        @if(Session::has('info'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.info("{{ session('info') }}");
+
+        @if (Session::has('info'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.info("{{ session('info') }}");
         @endif
-      
-        @if(Session::has('warning'))
-        toastr.options =
-        {
-            "closeButton" : true,
-            "progressBar" : true
-        }
-                toastr.warning("{{ session('warning') }}");
+
+        @if (Session::has('warning'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.warning("{{ session('warning') }}");
         @endif
-      </script>
+    </script>
 </body>
 
 

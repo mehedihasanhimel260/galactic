@@ -1,6 +1,9 @@
 @extends('frontend.layout')
 @section('content')
+   
     <section class="hero-section">
+
+
         <div class="container">
             <div class="hero-content">
                 <h4>Enjoy The Games</h4>
@@ -225,7 +228,7 @@
                                     <div class="product-thumb">
                                         <img src="{{ asset($project->main_image) }}" alt="img">
                                         {{-- <a href="{{ asset('frontend') }}/#" class="badge in-stock"></a> --}}
-                                        <a href="{{ route('project.details',$project->id) }}"
+                                        <a href="{{ route('project.details', $project->id) }}"
                                             class="default-btn">Details</a>
                                     </div>
                                     <div class="product-info">
@@ -242,7 +245,7 @@
                                             </ul>
                                         </div> --}}
                                         <h3><a
-                                                href="{{ route('project.details',$project->id) }}">{{ $project->title_english }}</a>
+                                                href="{{ route('project.details', $project->id) }}">{{ $project->title_english }}</a>
                                         </h3>
                                         <h4 class="price">${{ $project->price }}</h4>
                                     </div>

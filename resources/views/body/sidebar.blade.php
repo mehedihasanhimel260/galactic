@@ -76,6 +76,23 @@
                         </ul>
                     </div>
                 </li>
+                <li>
+                    <a href="#sidebarRanking" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span>Team Ranking Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarRanking">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('ranking.index') }}">All Teams Ranking</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('ranking.create') }}">Add Teams Ranking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
 
                 <li>

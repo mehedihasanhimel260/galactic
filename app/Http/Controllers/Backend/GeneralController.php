@@ -4,18 +4,17 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use  App\Models\BannerAndTitle;
-use  App\Models\Logo;
-use  App\Models\WebsiteLink;
-use  App\Models\WebsiteBanner;
-use  App\Models\Footer;
+use App\Models\BannerAndTitle;
+use App\Models\Logo;
+use App\Models\WebsiteLink;
+use App\Models\WebsiteBanner;
+use App\Models\Footer;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 
-
 class GeneralController extends Controller
 {
-    public  function tech_web_general_settings()
+    public function tech_web_general_settings()
     {
         $banner_info = BannerAndTitle::latest('id', 'DESC')->get();
         return view('backend.general.general_setting_page', compact('banner_info'));
@@ -23,7 +22,6 @@ class GeneralController extends Controller
 
     public function tech_web_banner_title_store(Request $request)
     {
-
         $image = $request->file('banner_image');
         $image_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         Image::make($image)->save('backend/banner_image/' . $image_gen);
@@ -34,13 +32,15 @@ class GeneralController extends Controller
             'title_english' => $request->title_english,
             'title_bangla' => $request->title_bangla,
             'page' => $request->page,
-            'created_at' => Carbon::now()
+            'created_at' => Carbon::now(),
         ]);
-        $notification = array(
+        $notification = [
             'message' => 'Banner And Titel inserted!',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notification);
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     } //end method---------------------------------------
 
     public function tech_web_edit_banner_title($id)
@@ -68,25 +68,29 @@ class GeneralController extends Controller
                 'title_english' => $request->title_english,
                 'title_bangla' => $request->title_bangla,
                 'page' => $request->page,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Banner And Title Updated!',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('general.setting')->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->route('general.setting')
+                ->with($notification);
         } else {
             BannerAndTitle::findOrFail($id)->update([
                 'title_english' => $request->title_english,
                 'title_bangla' => $request->title_bangla,
                 'page' => $request->page,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Banner And Title Updated!',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('general.setting')->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->route('general.setting')
+                ->with($notification);
         } //end if else
     } //end method---------------------------------------
 
@@ -109,13 +113,14 @@ class GeneralController extends Controller
         $image = $banner_image->banner_image;
         @unlink($image); //delete banner_image from local path_folder
         BannerAndTitle::findOrFail($id)->delete();
-        $notification = array(
+        $notification = [
             'message' => 'Banner And Title Deleted!',
-            'alert-type' => 'error'
-        );
-        return redirect()->back()->with($notification);
+            'alert-type' => 'error',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     } //end method-------------------------------------------
-
 
     // ======================Logo setting all method ==========================
 
@@ -125,9 +130,9 @@ class GeneralController extends Controller
 
         if ($logo) {
             $logo_img = Logo::latest()->first();
-            $id = $logo_img->id;   
-                   
-            $data = array();
+            $id = $logo_img->id;
+
+            $data = [];
             $data['site_name_english'] = $request->site_name_english;
             $data['site_name_bangla'] = $request->site_name_bangla;
             $data['updated_at'] = Carbon::now();
@@ -139,6 +144,14 @@ class GeneralController extends Controller
                 Image::make($admin_logo_img)->save('backend/logo/' . $admin_logo_Name);
                 $admin_logo_save = 'backend/logo/' . $admin_logo_Name; //image save into db
                 $data['admin_logo_image'] = $admin_logo_save;
+            }
+            if ($request->file('bg_image')) {
+                @unlink($logo_img->admin_logo_image);
+                $admin_logo_img = $request->file('bg_image');
+                $admin_logo_Name = hexdec(uniqid()) . '.' . $admin_logo_img->getClientOriginalExtension();
+                Image::make($admin_logo_img)->save('backend/logo/' . $admin_logo_Name);
+                $admin_logo_save = 'backend/logo/' . $admin_logo_Name; //image save into db
+                $data['bg_image'] = $admin_logo_save;
             }
 
             if ($request->file('frontend_logo_image')) {
@@ -169,17 +182,24 @@ class GeneralController extends Controller
             }
 
             Logo::findOrFail($id)->update($data);
-            $notification = array(
+            $notification = [
                 'message' => 'Logo Updated Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         } else {
             //
             $admin_logo_img = $request->file('admin_logo_image');
             $admin_logo_Name = hexdec(uniqid()) . '.' . $admin_logo_img->getClientOriginalExtension();
             Image::make($admin_logo_img)->save('backend/logo/' . $admin_logo_Name);
             $admin_logo_save = 'backend/logo/' . $admin_logo_Name; //image save into db;
+
+            $bg_image = $request->file('bg_image');
+            $bg_imagename = hexdec(uniqid()) . '.' . $bg_image->getClientOriginalExtension();
+            Image::make($bg_image)->save('backend/logo/' . $bg_imagename);
+            $bg_imagename_save = 'backend/logo/' . $bg_imagename; //image save into db;
 
             $frontend_logo_img = $request->file('frontend_logo_image');
             $frontend_logo_Name = hexdec(uniqid()) . '.' . $frontend_logo_img->getClientOriginalExtension();
@@ -198,18 +218,21 @@ class GeneralController extends Controller
 
             Logo::insert([
                 'admin_logo_image' => $admin_logo_save,
+                'bg_image' => $bg_imagename_save,
                 'frontend_logo_image' => $frontend_logo_save,
                 'frontend_footer_image' => $frontend_footer_save,
                 'favicon_image' => $favicon_save,
                 'site_name_english' => $request->site_name_english,
                 'site_name_bangla' => $request->site_name_bangla,
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Logo Inserted Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         }
     } //end method----------------------------------------------------
 
@@ -219,12 +242,12 @@ class GeneralController extends Controller
         $website = WebsiteLink::latest()->first();
         $iframe_html = $request->map_link;
 
-            // Extract src attribute from the iframe HTML
-            preg_match('/src="([^"]+)"/', $iframe_html, $matches);
-            
-            if (count($matches) > 1) {
-                $src = $matches[1];
-            }
+        // Extract src attribute from the iframe HTML
+        preg_match('/src="([^"]+)"/', $iframe_html, $matches);
+
+        if (count($matches) > 1) {
+            $src = $matches[1];
+        }
         if ($website) {
             $website = WebsiteLink::latest()->first();
             $id = $website->id;
@@ -240,15 +263,17 @@ class GeneralController extends Controller
                 'twitter' => $request->twitter,
                 'telegram' => $request->telegram,
                 'youtube' => $request->youtube,
-                'map_link' =>  $src,
+                'map_link' => $src,
                 'phone' => $request->phone,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Website Link Updated Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         } else {
             WebsiteLink::insert([
                 'email' => $request->email,
@@ -264,13 +289,15 @@ class GeneralController extends Controller
                 'youtube' => $request->youtube,
                 'map_link' => $src,
                 'phone' => $request->phone,
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Website Link Inserted Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         }
     } //end method----------------------------------------------
 
@@ -288,13 +315,15 @@ class GeneralController extends Controller
             'short_details_eng' => $request->short_details_eng,
             'short_details_bng' => $request->short_details_bng,
             'banner_image' => $save_url,
-            'created_at' => Carbon::now()
+            'created_at' => Carbon::now(),
         ]);
-        $notification = array(
+        $notification = [
             'message' => 'Website Banner inserted!',
-            'alert-type' => 'success'
-        );
-        return redirect()->back()->with($notification);
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     } //end method------------------------------------
 
     public function tec_web_edit_website_banner($id)
@@ -321,40 +350,46 @@ class GeneralController extends Controller
                 'short_details_eng' => $request->short_details_eng,
                 'short_details_bng' => $request->short_details_bng,
                 'banner_image' => $save_url,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Website Banner Updated Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('general.setting')->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->route('general.setting')
+                ->with($notification);
         } else {
             WebsiteBanner::findOrFail($id)->update([
                 'title_english' => $request->title_english,
                 'title_bangla' => $request->title_bangla,
                 'short_details_eng' => $request->short_details_eng,
                 'short_details_bng' => $request->short_details_bng,
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Website Banner Updated Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('general.setting')->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->route('general.setting')
+                ->with($notification);
         }
     } //end method---------------------------------------------
 
     public function tec_web_website_banner_delete($id)
     {
-        $image =  WebsiteBanner::find($id);
+        $image = WebsiteBanner::find($id);
         $banner_image = $image->banner_image;
         @unlink($banner_image); //image delete from the local folder path;
         WebsiteBanner::findOrFail($id)->delete();
-        $notification = array(
+        $notification = [
             'message' => 'Website Banner Deleted Successfully!',
-            'alert-type' => 'error'
-        );
-        return redirect()->back()->with($notification);
+            'alert-type' => 'error',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     } //end method----------------------------------------
 
     // website bnner status active inactive method start ------------
@@ -381,27 +416,29 @@ class GeneralController extends Controller
                 'footer_details_eng' => $request->footer_details_eng,
                 'footer_details_bng' => $request->footer_details_bng,
                 'copy_right_text' => $request->copy_right_text,
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Footer Data Updated Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         } else {
             Footer::insert([
                 'footer_details_eng' => $request->footer_details_eng,
                 'footer_details_bng' => $request->footer_details_bng,
                 'copy_right_text' => $request->copy_right_text,
-                'created_at' => Carbon::now()
+                'created_at' => Carbon::now(),
             ]);
-            $notification = array(
+            $notification = [
                 'message' => 'Footer Data inserted Successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+                'alert-type' => 'success',
+            ];
+            return redirect()
+                ->back()
+                ->with($notification);
         } //end if else
     } //end method----------------------------------------------
-
-
 }
