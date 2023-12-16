@@ -75,6 +75,25 @@
                 </li>
 
 
+
+                <li>
+                    <a href="#sidebarService1" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span>Trunament schedule Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarService1">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('trunament-schedule.index') }}">All Trunament Schedule</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('trunament-schedule.create') }}">Add Trunament Schedule</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li>
                     <a href="#sidebarService" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>

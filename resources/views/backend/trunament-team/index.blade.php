@@ -4,10 +4,8 @@
 @endsection
 @section('admin')
     <div class="content">
-
         <!-- Start Content-->
         <div class="container-fluid">
-
             <!-- start page title -->
             <div class="row">
                 <div class="col-12">
@@ -22,13 +20,11 @@
                 </div>
             </div>
             <!-- end page title -->
-
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title py-2">All Team Members Table</h4>
-
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
@@ -41,7 +37,6 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @foreach ($trunament_teams as $key => $item)
                                         <tr>
@@ -52,7 +47,7 @@
                                             <td>{{ $item->tournament_name }}</td>
                                             <td>{{ $item->number }}</td>
                                             <td>
-                                               
+
                                             </td>
                                             <td>
                                                 <a href="{{ route('edit.team', $item->id) }}" class="btn btn-info">Edit</a>
@@ -61,20 +56,13 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
-
                         </div> <!-- end card body-->
                     </div> <!-- end card -->
                 </div><!-- end col-->
             </div>
             <!-- end row-->
-
-
-
-
         </div> <!-- container -->
-
     </div> <!-- content -->
 @endsection
