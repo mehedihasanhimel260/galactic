@@ -13,9 +13,11 @@ return new class extends Migration {
         Schema::create('trunament_rankings', function (Blueprint $table) {
             $table->id();
             $table->string('trunament_id')->nullable();
-            $table->string('team_id')->nullable();
-            $table->string('ranking_number')->nullable();
-            $table->string('comment')->nullable();
+            $table->string('team_id')->nullable(); // Team
+            $table->string('ranking_number')->nullable(); //PTS
+            $table->string('Kill')->nullable(); //Kill
+            $table->string('Booyah')->nullable(); //Booyah
+            $table->string('match')->nullable(); //M
             $table->timestamps();
         });
     }

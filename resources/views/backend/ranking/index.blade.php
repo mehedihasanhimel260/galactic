@@ -35,7 +35,7 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group mb-3">
                                             <label for="example-email" class="form-label">Select Tournament</label>
                                             <select id="tournamentSelect" name="trunament_id" class="form-select mt-2 p-2">
@@ -48,7 +48,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group mb-3">
                                             <label for="example-email" class="form-label">Select Team</label>
                                             <select id="teamSelect" name="team_id" class="form-select mt-2 p-2" disabled>
@@ -56,28 +56,38 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group mb-3">
-                                                <label for="simpleinput" class="form-label">Ranking Number </label>
-                                                <input type="text" name="ranking_number" class="form-control"
-                                                    placeholder="Team 1 name...">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group mb-3">
-                                                <label for="example-email" class="form-label">Ranking Somment</label>
-                                                <input type="text" name="comment" class="form-control"
-                                                    placeholder="comment">
-                                            </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group mb-3">
+                                            <label for="simpleinput" class="form-label">PTS</label>
+                                            <input type="number" name="ranking_number" class="form-control"
+                                                placeholder="01">
                                         </div>
                                     </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group mb-3">
+                                            <label for="example-email" class="form-label">Kill</label>
+                                            <input type="number" name="Kill" class="form-control" placeholder="01">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group mb-3">
+                                            <label for="example-email" class="form-label">Booyah</label>
+                                            <input type="number" name="Booyah" class="form-control" placeholder="01">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group mb-3">
+                                            <label for="example-email" class="form-label">Match</label>
+                                            <input type="number" name="match" class="form-control" placeholder="01">
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <!-- end row-->
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-success waves-effect waves-light "><i
-                                                class="mdi mdi-content-save"></i>Submit</button>
-                                    </div>
+                                <!-- end row-->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light "><i
+                                            class="mdi mdi-content-save"></i>Submit</button>
+                                </div>
                             </form>
 
                         </div> <!-- end card-body -->
@@ -92,11 +102,13 @@
                             <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
-                                        <th>SL</th>
-                                        <th>Trunament Name</th>
+                                        {{-- Pos	Team	M	Booyah	Kill	PTS --}}
+                                        <th>Pos</th>
                                         <th>Team Name</th>
-                                        <th>Ranking</th>
-                                        <th>Comment</th>
+                                        <th>Match</th>
+                                        <th>Booyah</th>
+                                        <th>Kill</th>
+                                        <th>PTS</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -109,10 +121,11 @@
                                                 $tournament_name = \App\Models\Blog::where('id', $item->trunament_id)->first()->title_english;
                                                 $team_name = \App\Models\TeamInfo::where('id', $item->team_id)->first()->team_name;
                                             @endphp
-                                            <td>{{ $tournament_name }}</td>
                                             <td>{{ $team_name }}</td>
-                                            <td>{{ $item->ranking_number }}</td>
-                                            <td>{{ $item->comment }}</td>
+                                            <th>{{ $item->match }}</th>
+                                            <th>{{ $item->Booyah }}</th>
+                                            <th>{{ $item->Kill }}</th>
+                                            <th>{{ $item->ranking_number }}</th>
 
                                             <td width="10%">
                                                 <form action="{{ route('ranking.destroy', $item->id) }}" method="post">
@@ -121,7 +134,8 @@
                                                     <a href="{{ route('ranking.edit', $item->id) }}"
                                                         class="btn btn-info">Edit</a>
 
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                    <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
 
                                                 </form>
 
