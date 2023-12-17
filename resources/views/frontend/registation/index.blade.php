@@ -28,7 +28,7 @@
                         <div class="checkout-form mb-30">
                             <div class="form-field">
                                 <input type="text" id="firstname" name="team_name" class="form-control"
-                                    placeholder="Team Name" required>
+                                    value="{{ Auth::user()->name }}" placeholder="Team Name" required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="lastname" name="link" class="form-control"
@@ -60,11 +60,11 @@
                             </div>
                             <div class="form-field">
                                 <input type="text" id="city" name="email" class="form-control" placeholder="email"
-                                    required>
+                                    value="{{ $user->email }}" required>
                             </div>
                             <div class="form-field">
-                                <input type="text" id="state" name="number" class="form-control"
-                                    placeholder="number" required>
+                                <input type="text" id="state" name="number" value="{{ $user->phone }}"
+                                    class="form-control" placeholder="number" required>
                             </div>
                             <div class="form-field">
                                 <input type="text" id="street" name="player_name_1" class="form-control"
@@ -108,11 +108,15 @@
                                     placeholder="Password" required>
                             </div>
                         </div>
-                        <div class="payment-method">
-                            <button type="submit" class="default-btn">Registration Now <span
-                                    style="top: 421px; left: 129px;"></span><span
-                                    style="top: 421px; left: 129px;"></span></button>
-                        </div>
+                        @if (auth()->check())
+                        @else
+                            <div class="payment-method">
+                                <button type="submit" class="default-btn">Registration Now <span
+                                        style="top: 421px; left: 129px;"></span><span
+                                        style="top: 421px; left: 129px;"></span></button>
+                            </div>
+                        @endif
+
                     </form>
                 </div>
 

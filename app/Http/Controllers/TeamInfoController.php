@@ -18,6 +18,7 @@ class TeamInfoController extends Controller
     public function index()
     {
         $trunament_teams = TeamInfo::get();
+
         return view('backend.trunament-team.index', compact('trunament_teams'));
     }
 
@@ -37,7 +38,7 @@ class TeamInfoController extends Controller
         $input = $request->all();
 
         $user = User::create([
-            'name' => $input['tournament_name'],
+            'name' => $input['team_name'],
             'email' => $input['email'],
             'role' => 'user',
             'phone' => $input['number'], //this was updated by me;
@@ -83,9 +84,39 @@ class TeamInfoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TeamInfo $teamInfo)
+    public function update(Request $request, $id)
     {
-        //
+        $input = $request->except(['password']); // Exclude 'password' and 'logo' from input
+
+        $teamInfo = TeamInfo::findOrFail($id);
+
+        $user = User::findOrFail(Auth::user()->id); // Assuming a relationship between User and TeamInfo, adjust this accordingly if needed
+        $user->update([
+            'name' => $input['tournament_name'],
+            'email' => $input['email'],
+            'role' => 'user',
+            'phone' => $input['number'],
+            'password' => Hash::make($request->password),
+        ]);
+
+        if ($request->hasFile('logo')) {
+            @unlink($teamInfo->logo);
+            $image = $request->file('logo');
+            $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('backend/teamlogo/', $image_name);
+            $input['logo'] = 'backend/teamlogo/' . $image_name;
+        }
+
+        $teamInfo->update($input); // Update TeamInfo with the modified input
+
+        $notification = [
+            'message' => 'Information Update Successfully!',
+            'alert-type' => 'success',
+        ];
+
+        return redirect()
+            ->back()
+            ->with($notification);
     }
 
     /**
@@ -97,7 +128,9 @@ class TeamInfoController extends Controller
     }
     public function tech_web_gaming_team_registation()
     {
+        $user = User::find(Auth::user()->id);
+        $teamInfo = TeamInfo::where('email', Auth::user()->email)->first();
         $trunaments = Blog::where('recent_activity', 0)->get();
-        return view('frontend.registation.index', compact('trunaments'));
+        return view('frontend.registation.index', compact('trunaments', 'user', 'teamInfo'));
     }
 }
