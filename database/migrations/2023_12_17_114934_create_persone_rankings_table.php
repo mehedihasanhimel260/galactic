@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('persone_rankings', function (Blueprint $table) {
             $table->id();
+            $table->string('trunament_id')->nullable();
+            $table->string('team_id')->nullable(); 
+            $table->string('ranking_number')->nullable(); 
+            $table->string('Kill')->nullable();
+            $table->string('Booyah')->nullable(); 
+            $table->string('match')->nullable(); 
             $table->timestamps();
         });
     }

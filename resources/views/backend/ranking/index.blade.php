@@ -29,9 +29,9 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <p class="text-white" style="font-size: 20px">Team Main Informantion</p>
+                            <p class="text-white" style="font-size: 20px">Person Main Informantion</p>
 
-                            <form id="myForm" method="post" action="{{ route('ranking.store') }}"
+                            <form id="myForm" method="post" action="{{ route('persone-ranking.store') }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -129,10 +129,11 @@
                                             <th>{{ $item->ranking_number }}</th>
 
                                             <td width="10%">
-                                                <form action="{{ route('ranking.destroy', $item->id) }}" method="post">
+                                                <form action="{{ route('persone-ranking.destroy', $item->id) }}"
+                                                    method="post">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <a href="{{ route('ranking.edit', $item->id) }}"
+                                                    <a href="{{ route('persone-ranking.edit', $item->id) }}"
                                                         class="btn btn-info">Edit</a>
 
                                                     <button type="submit" class="btn btn-danger"
@@ -154,9 +155,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
                             <p class="text-white" style="font-size: 20px">Team Main Informantion</p>
-
                             <form id="myForm" method="post" action="{{ route('ranking.store') }}"
                                 enctype="multipart/form-data">
                                 @csrf

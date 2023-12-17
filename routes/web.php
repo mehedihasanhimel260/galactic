@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HerosController;
+use App\Http\Controllers\PersoneRankingController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\TeamInfoController;
@@ -239,6 +240,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('/admin/project', ProjectController::class);
     Route::resource('/team/gameing', TeamInfoController::class);
     Route::resource('/admin/team/ranking', TrunamentRankingController::class);
+    Route::resource('/admin/persone-ranking', PersoneRankingController::class);
     Route::resource('/admin/trunament-season', SeasonController::class);
     Route::resource('/admin/trunament-schedule', TrunamentScheduleController::class);
     Route::resource('/admin/trunament-round-schedule', RoundController::class);

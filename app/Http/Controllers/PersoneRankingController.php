@@ -28,7 +28,11 @@ class PersoneRankingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        PersoneRanking::create($request->all());
+
+        return redirect()
+            ->route('ranking.index')
+            ->with('success', 'Persone data submit successfully.');
     }
 
     /**
@@ -58,8 +62,10 @@ class PersoneRankingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PersoneRanking $personeRanking)
+    public function destroy($id)
     {
-        //
+        $trunamentRanking = PersoneRanking::find($id);
+        $trunamentRanking->delete();
+        return redirect()->back();
     }
 }
