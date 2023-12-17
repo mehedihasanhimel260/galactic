@@ -13,7 +13,7 @@ class HerosController extends Controller
     public function index()
     {
         $hero = Heros::first();
-        return view('backend.heros.index',compact('hero'));
+        return view('backend.heros.index', compact('hero'));
     }
 
     /**
@@ -29,9 +29,15 @@ class HerosController extends Controller
      */
     public function store(Request $request)
     {
+        $url = $request->video;
+        $pattern = '/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/';
+        preg_match($pattern, $url, $matches);
+
+        $videoId = isset($matches[1]) ? $matches[1] : null;
         $input = $request->all();
+        $input['video'] = $videoId;
         $hero = Heros::first();
-    
+
         if ($hero) {
             // If the hero exists, handle the update process
             if ($request->hasFile('heros_image')) {
@@ -39,15 +45,15 @@ class HerosController extends Controller
                 if (file_exists($hero->heros_image)) {
                     unlink($hero->heros_image);
                 }
-    
+
                 $image = $request->file('heros_image');
                 $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
                 $image->move('backend/teamlogo/', $image_name);
                 $input['heros_image'] = 'backend/teamlogo/' . $image_name;
             }
-    
+
             $hero->update($input);
-    
+
             $notification = [
                 'message' => 'Heros updated Successfully!',
                 'alert-type' => 'success',
@@ -60,8 +66,6 @@ class HerosController extends Controller
             // (same as before)
         }
     }
-    
-    
 
     /**
      * Display the specified resource.

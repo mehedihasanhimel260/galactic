@@ -1,16 +1,15 @@
 @extends('frontend.layout')
 @section('content')
-   
     <section class="hero-section">
 
 
         <div class="container">
             <div class="hero-content">
-                <h4>Enjoy The Games</h4>
-                <h1>Epic Games Made For<br> True Gamers!</h1>
+                <h4>{{ $heros->heros_short }}</h4>
+                <h1>{{ $heros->heros_title }}</h1>
                 <div class="btn-group">
                     <a href="{{ route('contact.us') }}" class="default-btn">Join With Us</a>
-                    <a data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=tv7LfFeamsc"
+                    <a data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v={{ $heros->video }}"
                         class="dl-video-popup play-btn">
                         <svg enable-background="new 0 0 41.999 41.999" version="1.1" viewBox="0 0 41.999 41.999"
                             xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +21,7 @@
                     </a>
                 </div>
                 <div class="hero-element">
-                    <img src="{{ asset('frontend') }}/assets/img/game-charecters.png" alt="thumb">
+                    <img src="{{ asset($heros->heros_image) }}" alt="thumb">
                     <div class="shape-wrap">
                         <div class="shape shape-1"></div>
                         <div class="shape shape-2"></div>
@@ -79,6 +78,60 @@
                     </li>
                 @endforeach
             </ul>
+        </div>
+    </section>
+    <section class="matches-section padding">
+        <div class="container">
+            <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
+                <h3>Upcoming Trunament Schedule</h3>
+                <h2>Battles Extreme <br> Masters <span>Tournament Schedule</span></h2>
+                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
+                    committed team.</p>
+            </div>
+            <section class="cart-section padding-top">
+                @foreach ($rounds as $round)
+                    <div class="container mt-5">
+                        <h2>{{ $round->season->name }} {{ $round->name }} Table</h2>
+                        <hr style="width:50%;text-align:left;margin-left:0;padding:5px;">
+                        <div class="row cart-header">
+                            <div class="col-lg-6">Date</div>
+                            <div class="col-lg-2">Group</div>
+                            <div class="col-lg-2">Time</div>
+                            <div class="col-lg-2">Map</div>
+                        </div>
+                        @php
+                            $filteredSchedules = $trunamentSchedule->filter(function ($item) use ($round) {
+                                return $item->round->id === $round->id;
+                            });
+                        @endphp
+                        @foreach ($filteredSchedules as $item)
+                            <div class="row cart-body pb-30">
+                                <div class="col-lg-6">
+                                    <div class="cart-item">
+                                        <h3>{{ \Carbon\Carbon::parse($item->date)->format('d-M-Y') }}</h3>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-lg-2">
+                                    <div class="cart-item">
+                                        <h3> {{ $item->group }}</h3>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-lg-2">
+                                    <div class="cart-item">
+                                        <h3>{{ \Carbon\Carbon::parse($item->start_time)->format('h:i A') }} </h3>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-lg-2">
+                                    <div class="cart-item">
+                                        <h3>{{ $item->map }}</h3>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
+            </section>
         </div>
     </section>
     <section class="watch-live-section padding-bottom">

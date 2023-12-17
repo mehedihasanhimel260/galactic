@@ -2,24 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Round;
 use App\Models\Season;
-use App\Models\TrunamentSchedule;
 use Illuminate\Http\Request;
 
-class TrunamentScheduleController extends Controller
+class SeasonController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rounds = Round::with('season')->get();
-        $trunamentSchedule = TrunamentSchedule::with('round')->get();
-        $tournament_season = Season::latest()
-            ->take(3)
-            ->get();
-        return view('backend.trunament-schedule.index', compact('trunamentSchedule', 'rounds', 'tournament_season'));
+        //
     }
 
     /**
@@ -35,10 +28,10 @@ class TrunamentScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        TrunamentSchedule::create($request->all());
+        Season::create($request->all());
 
         $notification = [
-            'message' => 'Schedule add Successfully!',
+            'message' => 'Season add Successfully!',
             'alert-type' => 'success',
         ];
         return redirect()
@@ -49,7 +42,7 @@ class TrunamentScheduleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TrunamentSchedule $trunamentSchedule)
+    public function show(Season $season)
     {
         //
     }
@@ -57,14 +50,9 @@ class TrunamentScheduleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Season $season)
     {
-        $trunamentSchedule = TrunamentSchedule::find($id);
-        $rounds = Round::get();
-        $tournament_season = Season::latest()
-            ->take(5)
-            ->get();
-        return view('backend.trunament-schedule.edit', compact('trunamentSchedule', 'rounds', 'tournament_season'));
+        //
     }
 
     /**
@@ -72,7 +60,7 @@ class TrunamentScheduleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $trunamentSchedule = TrunamentSchedule::find($id);
+        $trunamentSchedule = Season::find($id);
         $trunamentSchedule->update($request->all());
         $notification = [
             'message' => 'Schedule update Successfully!',
@@ -88,10 +76,10 @@ class TrunamentScheduleController extends Controller
      */
     public function destroy($id)
     {
-        $trunamentSchedule = TrunamentSchedule::find($id);
-        $trunamentSchedule->delete();
+        $trunamentRanking = Season::find($id);
+        $trunamentRanking->delete();
         $notification = [
-            'message' => 'Schedule delete Successfully!',
+            'message' => 'Season Deleted Successfully!',
             'alert-type' => 'success',
         ];
         return redirect()

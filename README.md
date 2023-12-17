@@ -9,5 +9,6 @@ then:<br>
 npm i<br>
 then:<br>
 npm run dev<br>
-php artisan migrate:refresh --path='./database/migrations/2023_12_14_055326_create_trunament_rankings_table.php' <br>
-php artisan route:list --name=account
+php artisan migrate:refresh --path='./database/migrations/2023_12_16_044934_create_rounds_table.php' <br>
+php artisan route:list --name=account<br>
+ php artisan optimize:clear<br>

@@ -7,12 +7,16 @@ use App\Models\Service;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\CounterIcon;
+use App\Models\Heros;
 use App\Models\ImageGallery;
 use App\Models\Project;
+use App\Models\Round;
+use App\Models\Season;
 use App\Models\Sponsor;
 use App\Models\Team;
 use App\Models\Slider;
 use App\Models\Testimonial2;
+use App\Models\TrunamentSchedule;
 use App\Models\VideoGallery;
 
 class WebViewHomePageController extends Controller
@@ -49,7 +53,14 @@ class WebViewHomePageController extends Controller
         $videos = VideoGallery::where('status', 1)
             ->latest('id', 'DESC')
             ->get();
-        return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos'));
+        $heros = Heros::first();
+
+        $tournament_season = Season::latest()->first();
+        $rounds = Round::where('seasons_id', $tournament_season->id)
+            ->with('season')
+            ->get();
+        $trunamentSchedule = TrunamentSchedule::with('round')->get();
+        return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {

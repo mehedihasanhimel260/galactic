@@ -26,16 +26,16 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <p class="text-white" style="font-size: 20px">Round Information</p>
+                            <p class="text-white" style="font-size: 20px">Trunament Season Information</p>
                             <div class="row">
                                 <div class="col-lg-4 ">
                                     <div class="form-group mb-3">
-                                        <form method="post" action="{{ route('trunament-round-schedule.store') }}"
+                                        <form method="post" action="{{ route('trunament-season.store') }}"
                                             enctype="multipart/form-data">
                                             @csrf
-                                            <label for="simpleinput" class="form-label">Round Name </label>
+                                            <label for="simpleinput" class="form-label">Season Name </label>
                                             <input type="text" name="name" id="title_english" class="form-control"
-                                                placeholder="Round Name...">
+                                                placeholder="Season Name...">
                                             <div class="text-center">
                                                 <button type="submit" class="btn btn-success waves-effect waves-light "><i
                                                         class="mdi mdi-content-save"></i>Save</button>
@@ -48,17 +48,17 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Round Name</th>
+                                                <th scope="col">Season Name</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($rounds as $round)
+                                            @foreach ($tournament_season as $round)
                                                 <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>
                                                         <form style="float: left;"
-                                                            action="{{ route('trunament-round-schedule.update', $round->id) }}"
+                                                            action="{{ route('trunament-season.update', $round->id) }}"
                                                             method="POST">
                                                             @method('PUT')
                                                             @csrf
@@ -72,13 +72,112 @@
                                                         <button type="submit" class="btn btn-info mt-2">Update</button>
                                                         </form>
                                                         <form style="float: right;"
-                                                            action="{{ route('trunament-round-schedule.destroy', $round->id) }}"
+                                                            action="{{ route('trunament-season.destroy', $round->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
                                                             <button type="submit" class="btn btn-danger mt-2"
                                                                 onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                                                         </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- end row-->
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+
+                </div><!-- end col -->
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-white" style="font-size: 20px">Round Information</p>
+                            <div class="row">
+                                <div class="col-lg-4 ">
+                                    <div class="form-group mb-3">
+                                        <form method="post" action="{{ route('trunament-round-schedule.store') }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <label for="simpleinput" class="form-label">Season Name </label>
+                                            <select id="tournamentSelect" name="seasons_id" class="form-select mt-2 p-2">
+                                                <option value="" selected disabled>Select Season Name...</option>
+                                                @foreach ($tournament_season as $item)
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <br>
+                                            <label for="simpleinput" class="form-label">Round Name </label>
+                                            <input type="text" name="name" id="title_english" class="form-control"
+                                                placeholder="Round Name...">
+                                            <br>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-success waves-effect waves-light "><i
+                                                        class="mdi mdi-content-save"></i>Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 mt-2">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Season Name</th>
+                                                <th scope="col">Round Name</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($rounds as $round)
+                                                <tr>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+
+                                                    <form style="float: left;"
+                                                        action="{{ route('trunament-round-schedule.update', $round->id) }}"
+                                                        method="POST">
+                                                        @method('PUT')
+                                                        @csrf
+                                                        <td>
+                                                            <div class="form-group ">
+                                                                <select id="tournamentSelect" name="seasons_id"
+                                                                    class="form-select mt-2 p-2">
+                                                                    <option value="" selected disabled>Select Season
+                                                                        Name...</option>
+                                                                    @foreach ($tournament_season as $item)
+                                                                        <option value="{{ $item->id }}"
+                                                                            {{ $round->seasons_id == $item->id ? 'selected' : '' }}>
+                                                                            {{ $item->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group ">
+                                                                <input type="text" id="title_bangla" name="name"
+                                                                    class="form-control" value="{{ $round->name }}"
+                                                                    placeholder="Title In Bangla...">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <button type="submit"
+                                                                class="btn btn-info mt-2">Update</button>
+                                                    </form>
+                                                    <form style="float: right;"
+                                                        action="{{ route('trunament-round-schedule.destroy', $round->id) }}"
+                                                        method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger mt-2"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                                                    </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -103,6 +202,20 @@
                                 <div class="row">
                                     <div class="col-lg-2 ">
                                         <div class="form-group mb-3">
+                                            <label for="simpleinput" class="form-label">Season Name </label>
+                                            <select id="tournamentSelect" name="seasons_id" class="form-select mt-2 p-2">
+                                                <option value="" selected disabled>Select Season Name...</option>
+
+                                                @foreach ($tournament_season as $item)
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 ">
+                                        <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Round Name </label>
                                             <select id="tournamentSelect" name="round_id" class="form-select mt-2 p-2">
                                                 <option value="" selected disabled>Select route Name...</option>
@@ -121,7 +234,7 @@
                                                 class="form-control mt-2 p-2" placeholder="Round Name...">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 ">
+                                    <div class="col-lg-2 ">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Group </label>
                                             <input type="text" name="group" id="title_english" class="form-control"
@@ -135,7 +248,7 @@
                                                 class="form-control mt-2 p-2" placeholder="Round Name...">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 ">
+                                    <div class="col-lg-2 ">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Map</label>
                                             <input type="text" name="map" id="title_english" class="form-control"
@@ -159,7 +272,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title py-2"> {{ $round->name }} Table</h4>
+                                <h4 class="header-title py-2"> {{ $round->season->name }} {{ $round->name }} Table</h4>
                                 <table id="basic-datatable{{ $loop->iteration }}"
                                     class="table dt-responsive nowrap w-100">
                                     <thead>
