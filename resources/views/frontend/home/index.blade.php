@@ -134,6 +134,51 @@
             </section>
         </div>
     </section>
+
+    <section class="matches-section padding">
+        <div class="container">
+            <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
+                <h3>Top Ranking </h3>
+                <h2>Battles Extreme <br> Masters <span>Tournament Ranking</span></h2>
+                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
+                    committed team.</p>
+            </div>
+            <section class="cart-section padding-top">
+
+                <table id="example" class="table text-light table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team Name</th>
+                            <th>Match</th>
+                            <th>Booyah</th>
+                            <th>Kill</th>
+                            <th>PTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($trunamentRanking as $key => $item)
+                            <tr class="text-light">
+                                <td>{{ $key + 1 }}</td>
+                                @php
+                                    $tournament_name = \App\Models\Blog::where('id', $item->trunament_id)->first()->title_english;
+                                    $team_name = \App\Models\TeamInfo::where('id', $item->team_id)->first()->team_name;
+                                @endphp
+                                <td>{{ $team_name }}</td>
+                                <th>{{ $item->match }}</th>
+                                <th>{{ $item->Booyah }}</th>
+                                <th>{{ $item->Kill }}</th>
+                                <th>{{ $item->ranking_number }}</th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </section>
+        </div>
+    </section>
+
+
     <section class="watch-live-section padding-bottom">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">

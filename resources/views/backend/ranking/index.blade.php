@@ -99,7 +99,8 @@
                         <div class="card-body">
                             <h4 class="header-title">All Team Table</h4>
 
-                            <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                           
+                            <table id="basic-datatable" class="table text-light dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
                                         {{-- Pos	Team	M	Booyah	Kill	PTS --}}

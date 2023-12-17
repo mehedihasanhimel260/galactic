@@ -13,7 +13,12 @@
 <script src="{{ asset('frontend') }}/assets/js/contact.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
 <script>
+    new DataTable('#example');
     (function() {
         var js =
             "window['__CF$cv$params']={r:'82f91c1789d54e9e',t:'MTcwMTU3ODE5OC40MjcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/56d3063b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
@@ -50,6 +55,4 @@
             };
         }
     })();
-
-
 </script>

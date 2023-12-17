@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/elements.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/main.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

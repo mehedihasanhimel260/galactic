@@ -15,7 +15,7 @@ class TrunamentRankingController extends Controller
     public function index()
     {
         $tournaments = Blog::where('recent_activity', 0)->get();
-        $trunamentRanking = TrunamentRanking::get();
+        $trunamentRanking = TrunamentRanking::orderBy('ranking_number', 'DESC')->get();
         return view('backend.ranking.index', compact('trunamentRanking', 'tournaments'));
     }
 
@@ -68,7 +68,7 @@ class TrunamentRankingController extends Controller
      */
     public function destroy($id)
     {
-        $trunamentRanking=TrunamentRanking::find($id);
+        $trunamentRanking = TrunamentRanking::find($id);
         $trunamentRanking->delete();
         return redirect()->back();
     }

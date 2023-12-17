@@ -16,6 +16,7 @@ use App\Models\Sponsor;
 use App\Models\Team;
 use App\Models\Slider;
 use App\Models\Testimonial2;
+use App\Models\TrunamentRanking;
 use App\Models\TrunamentSchedule;
 use App\Models\VideoGallery;
 
@@ -60,7 +61,8 @@ class WebViewHomePageController extends Controller
             ->with('season')
             ->get();
         $trunamentSchedule = TrunamentSchedule::with('round')->get();
-        return view('frontend.home.index', compact('testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
+        $trunamentRanking = TrunamentRanking::orderBy('ranking_number', 'DESC')->get();
+        return view('frontend.home.index', compact('trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {
