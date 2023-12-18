@@ -9,4 +9,12 @@ class PersoneRanking extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function TeamInfo()
+    {
+        return $this->belongsTo(TeamInfo::class, 'team_id');
+    }
+    public function trunament()
+    {
+        return $this->belongsTo(Blog::class, 'trunament_id');
+    }
 }

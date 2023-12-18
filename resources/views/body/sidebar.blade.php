@@ -88,7 +88,7 @@
                                 <a href="{{ route('trunament-schedule.index') }}">All Trunament Schedule</a>
                             </li>
                             <li>
-                                <a href="{{ route('trunament-schedule.create') }}">Add Trunament Schedule</a>
+                                <a href="{{ route('trunament-schedule.index') }}">Add Trunament Schedule</a>
                             </li>
                         </ul>
                     </div>
@@ -123,7 +123,7 @@
                                 <a href="{{ route('ranking.index') }}">All Teams Ranking</a>
                             </li>
                             <li>
-                                <a href="{{ route('ranking.create') }}">Add Teams Ranking</a>
+                                <a href="{{ route('ranking.index') }}">Add Teams Ranking</a>
                             </li>
                         </ul>
                     </div>

@@ -32,7 +32,7 @@
                             <p class="text-white" style="font-size: 20px">Person Main Informantion</p>
 
                             <form id="myForm" method="post"
-                                action="{{ route('ranking.update', $trunamentRanking->id) }}" enctype="multipart/form-data">
+                                action="{{ route('persone-ranking.update', $trunamentRanking->id) }}" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="row">

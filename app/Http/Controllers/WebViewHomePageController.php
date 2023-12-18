@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\CounterIcon;
 use App\Models\Heros;
 use App\Models\ImageGallery;
+use App\Models\PersoneRanking;
 use App\Models\Project;
 use App\Models\Round;
 use App\Models\Season;
@@ -62,7 +63,10 @@ class WebViewHomePageController extends Controller
             ->get();
         $trunamentSchedule = TrunamentSchedule::with('round')->get();
         $trunamentRanking = TrunamentRanking::orderBy('ranking_number', 'DESC')->get();
-        return view('frontend.home.index', compact('trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
+        $persontrunamentRanking = PersoneRanking::with('TeamInfo', 'trunament')
+            ->orderBy('ranking_number', 'DESC')
+            ->get();
+        return view('frontend.home.index', compact('persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {

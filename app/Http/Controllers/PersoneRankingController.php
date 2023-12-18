@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\PersoneRanking;
+use App\Models\TrunamentRanking;
 use Illuminate\Http\Request;
 
 class PersoneRankingController extends Controller
@@ -31,7 +33,7 @@ class PersoneRankingController extends Controller
         PersoneRanking::create($request->all());
 
         return redirect()
-            ->route('ranking.index')
+            ->back()
             ->with('success', 'Persone data submit successfully.');
     }
 
@@ -46,17 +48,30 @@ class PersoneRankingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PersoneRanking $personeRanking)
+    public function edit(Request $request, $id)
     {
-        //
+        $tournaments = Blog::where('recent_activity', 0)->get();
+        $trunamentRanking = PersoneRanking::with('TeamInfo')
+            ->find($id)
+            ->first();
+        return view('backend.ranking.editperson', compact('trunamentRanking', 'tournaments'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PersoneRanking $personeRanking)
+    public function update(Request $request, $id)
     {
-        //
+        $trunamentRanking = PersoneRanking::find($id);
+        $trunamentRanking->update($request->all());
+
+        $notification = [
+            'message' => 'info updated Successfully!',
+            'alert-type' => 'success',
+        ];
+        return redirect()
+            ->back()
+            ->with($notification);
     }
 
     /**
