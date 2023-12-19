@@ -61,12 +61,13 @@ class WebViewHomePageController extends Controller
         $rounds = Round::where('seasons_id', $tournament_season->id)
             ->with('season')
             ->get();
+        $tournaments = Blog::where('recent_activity', 0)->get();
         $trunamentSchedule = TrunamentSchedule::with('round')->get();
         $trunamentRanking = TrunamentRanking::orderBy('ranking_number', 'DESC')->get();
         $persontrunamentRanking = PersoneRanking::with('TeamInfo', 'trunament')
             ->orderBy('ranking_number', 'DESC')
             ->get();
-        return view('frontend.home.index', compact('persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
+        return view('frontend.home.index', compact('tournaments', 'persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {
