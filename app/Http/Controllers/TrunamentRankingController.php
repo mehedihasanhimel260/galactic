@@ -39,10 +39,13 @@ class TrunamentRankingController extends Controller
     public function store(Request $request)
     {
         TrunamentRanking::create($request->all());
-
+        $notification = [
+            'message' => 'info created Successfully!',
+            'alert-type' => 'success',
+        ];
         return redirect()
             ->route('ranking.index')
-            ->with('success', 'Product created successfully.');
+            ->with($notification);
     }
 
     /**

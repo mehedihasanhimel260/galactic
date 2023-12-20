@@ -40,6 +40,21 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#sidebarpage-title" data-bs-toggle="collapse">
+                        <i class="fe-settings me-1"></i>
+                        <span>Page title Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarpage-title">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('page-title.index') }}">Page Title </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
                 <li>
                     <a href="#sidebarHeros" data-bs-toggle="collapse">

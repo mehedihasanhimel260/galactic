@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HerosController;
+use App\Http\Controllers\PageTitleController;
 use App\Http\Controllers\PersoneRankingController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SeasonController;
@@ -245,6 +246,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('/admin/trunament-schedule', TrunamentScheduleController::class);
     Route::resource('/admin/trunament-round-schedule', RoundController::class);
     Route::resource('/admin/heros-section', HerosController::class);
+    Route::resource('/admin/page-title', PageTitleController::class);
     Route::get('/admin-team-data', [TrunamentRankingController::class, 'get_team_data'])->name('get_team_data');
     Route::get('admin/career/apply', [CareerController::class, 'index'])->name('tech_web_gaming_career_apply_index');
     Route::get('/admin/career/apply/{id}', [CareerController::class, 'destroy'])->name('tech_web_gaming_career_apply_destroy');
