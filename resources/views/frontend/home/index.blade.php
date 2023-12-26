@@ -306,7 +306,7 @@
                                     </div>
                                     <div class="team-content">
                                         <span class="whte-shape"></span>
-                                        <h3><a href="#">{{ $team->name_english }}</a></h3>
+                                        <h3><a href="{{route('webview.player_details',$team->id)}}">{{ $team->name_english }}</a></h3>
                                         <h4> {{ $team->desig_english }}</h4>
                                     </div>
                                 </div>

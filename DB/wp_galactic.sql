@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2023 at 12:07 PM
+-- Generation Time: Dec 26, 2023 at 08:10 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -293,7 +293,7 @@ CREATE TABLE `heros` (
 --
 
 INSERT INTO `heros` (`id`, `heros_short`, `heros_title`, `heros_image`, `video`, `created_at`, `updated_at`) VALUES
-(1, 'Provident non debit', 'Aut et dolore praese', 'backend/teamlogo/657aec6286563_1702554722.png', 'Deserunt quia quis d', '2023-12-14 05:39:02', '2023-12-14 05:52:02');
+(1, 'Provident non debit', 'Aut et dolore praese', 'backend/teamlogo/657eaffe76ed0_1702801406.png', 'Fo9dHl-s6fg', '2023-12-14 05:39:02', '2023-12-17 02:23:26');
 
 -- --------------------------------------------------------
 
@@ -391,9 +391,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (41, '2023_10_27_125514_create_blogs_table', 10),
 (43, '2023_12_12_083811_create_team_infos_table', 11),
 (45, '2023_12_13_052301_create_careers_table', 12),
-(46, '2023_12_14_055326_create_trunament_rankings_table', 13),
 (47, '2023_10_22_063533_create_logos_table', 14),
-(48, '2023_12_14_111203_create_heros_table', 15);
+(48, '2023_12_14_111203_create_heros_table', 15),
+(51, '2023_12_14_055326_create_trunament_rankings_table', 17),
+(52, '2023_12_17_045726_create_seasons_table', 18),
+(53, '2023_12_16_045150_create_trunament_schedules_table', 19),
+(54, '2023_12_16_044934_create_rounds_table', 20),
+(55, '2023_12_17_114934_create_persone_rankings_table', 21),
+(56, '2023_12_20_062041_create_page_titles_table', 22);
 
 -- --------------------------------------------------------
 
@@ -420,6 +425,49 @@ CREATE TABLE `notices` (
 
 INSERT INTO `notices` (`id`, `pdf_file`, `short_des_eng`, `short_des_bng`, `long_des_eng`, `long_des_bng`, `status`, `add_home`, `created_at`, `updated_at`) VALUES
 (1, 'backend/notice/202312141103.jpg', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque sed, fusce iaculis rhoncus nisi class vehicula bibendum malesuada fringilla duis, nibh torquent lacus velit volutpat condimentum orci est. Orci consequat justo egestas integer et commodo natoque, convallis parturient nullam semper pellentesque libero, sapien torquent dui metus himenaeos sollicitudin. Auctor facilisis nascetur pharetra tempus elementum phasellus sagittis fusce feugiat, mattis enim felis hac lacinia a tempor nisl justo, imperdiet neque suscipit leo taciti hendrerit orci aliquam. Laoreet rhoncus sollicitudin montes parturient conubia bibendum netus lectus, morbi aliquet venenatis ante mollis varius sociosqu risus accumsan, a cum congue dictumst eleifend ridiculus fermentum. Viverra aliquam vehicula convallis at ridiculus proin nam ultrices id, cursus velit purus potenti vitae aliquet hac nascetur, sapien quisque felis metus malesuada condimentum sodales morbi. Senectus blandit nam hendrerit quisque arcu tortor rhoncus maecenas sapien penatibus parturient dictumst, litora habitant in augue ullamcorper sodales lacus at justo accumsan conubia. Primis luctus rutrum viverra senectus quam ultricies vitae curabitur, nascetur fermentum eget odio sociosqu hendrerit inceptos aliquam, pellentesque faucibus risus dictum dis platea fames.</p>', NULL, NULL, NULL, 1, 0, '2023-12-14 05:03:22', '2023-12-14 05:03:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_titles`
+--
+
+CREATE TABLE `page_titles` (
+  `id` bigint UNSIGNED NOT NULL,
+  `page` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sort_description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `page_titles`
+--
+
+INSERT INTO `page_titles` (`id`, `page`, `title`, `sub_title`, `sort_description`, `created_at`, `updated_at`) VALUES
+(1, '1', 'UPCOMING MATCHES', 'BATTLES EXTREME MASTERS TOURNAMENT', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-20 02:49:29', '2023-12-20 02:49:29'),
+(2, '1', 'UPCOMING TRUNAMENT SCHEDULE', 'BATTLES EXTREME MASTERS TOURNAMENT', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-20 02:49:51', '2023-12-20 02:49:51'),
+(3, '1', 'TOP RANKING', 'BATTLES EXTREME MASTERS TOURNAMENT RANKING', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-20 02:51:49', '2023-12-20 02:51:49'),
+(4, '2', 'ABOUT US', 'About Galactic Squad', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-20 03:19:45', '2023-12-20 03:19:45'),
+(5, '1', 'TOP RANKING', 'BATTLES EXTREME MASTERS PERSONE RANKING', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:27:30', '2023-12-25 23:27:30'),
+(6, '1', 'WATCH THE GAMEPLAY', 'WATCH LIVE STREAMING', 'Our success in creating business solutions is due in large part to our talented and highly committed team.  thumb', '2023-12-25 23:29:39', '2023-12-25 23:29:39'),
+(7, '1', 'OUR GAMMERS', 'MEET OUR GAMERS', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:30:12', '2023-12-25 23:30:12'),
+(8, '1', 'SEND US A MAIL', 'JOIN US AS A SUPER FANS AND GET ALL THE BENEFITS', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:32:00', '2023-12-25 23:32:00'),
+(9, '1', 'ONLINE GAMING SHOP', 'EXPLORE OUR GEARS', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:32:53', '2023-12-25 23:32:53'),
+(10, '1', 'WHAT\'S ON OUR MIND', 'NEWS AND HEADLINES', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:33:36', '2023-12-25 23:33:36'),
+(11, '2', 'OUR GAMEPLAY', 'OUR RECENT GAMEPLAY', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:37:37', '2023-12-25 23:37:37'),
+(12, '2', 'OUR GAMMERS', 'MEET OUR GAMERS', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:38:18', '2023-12-25 23:38:18'),
+(13, '2', 'CONNECT WITH OUR GAMING TEAM!', 'Join With Us For Upcoming Gaming Tournaments!', NULL, '2023-12-25 23:38:47', '2023-12-25 23:38:47'),
+(14, '3', 'TUNAMENT ALL', 'Gaming News & Insights', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:44:53', '2023-12-25 23:44:53'),
+(15, '4', 'BLOG ALL', 'BLOG ALL Gaming News & Insights', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-25 23:58:27', '2023-12-25 23:58:27'),
+(16, '7', 'Do You Have Any Questions?', NULL, 'Get in touch to discuss your employee wellbeing needs today. Please give us a call, drop us an email or fill out the contact form.', '2023-12-25 23:59:43', '2023-12-25 23:59:43'),
+(17, '7', 'Drop Us A Line', NULL, 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-26 00:00:04', '2023-12-26 00:00:04'),
+(18, '6', 'Career', 'All Career Post', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-26 00:14:46', '2023-12-26 00:14:46'),
+(19, '5', 'RECENT ACTIVITY', 'Gaming News & Insights', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-26 00:21:08', '2023-12-26 00:21:08'),
+(20, '8', 'UP COMMING TUNAMENT ALL', 'Gaming News & Insights', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-26 00:50:22', '2023-12-26 00:50:22'),
+(21, '9', 'Upcoming Matches', 'Shedule', 'Our success in creating business solutions is due in large part to our talented and highly committed team.', '2023-12-26 00:55:28', '2023-12-26 00:55:28');
 
 -- --------------------------------------------------------
 
@@ -451,6 +499,33 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `persone_rankings`
+--
+
+CREATE TABLE `persone_rankings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `trunament_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `team_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ranking_number` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Kill` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Booyah` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `match` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `persone_rankings`
+--
+
+INSERT INTO `persone_rankings` (`id`, `trunament_id`, `team_id`, `ranking_number`, `Kill`, `Booyah`, `match`, `created_at`, `updated_at`) VALUES
+(1, '5', '15', '477', '20', '5', '17', '2023-12-18 00:24:05', '2023-12-18 03:17:31'),
+(2, '5', '15', '334', '26', '61', '81', '2023-12-18 00:46:48', '2023-12-18 00:46:48'),
+(3, '6', '16', '132', '11', '93', '87', '2023-12-18 00:46:59', '2023-12-18 00:46:59');
 
 -- --------------------------------------------------------
 
@@ -494,6 +569,55 @@ INSERT INTO `projects` (`id`, `title_english`, `title_bangla`, `main_image`, `pr
 (8, 'Non sit anim non am', 'Maxime quas enim rep', 'backend/service/main_image/1785160782525309.png', '788', 'backend/service/banner_image/1782895669816396.jpg', NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, NULL, NULL, NULL, NULL, '1', '2023-11-18 04:03:29', '2023-12-13 04:06:29'),
 (9, 'Et quae eum mollit q', 'Dolores suscipit inv', 'backend/service/main_image/1782895699639445.jpg', '905', 'backend/service/banner_image/1782895699702828.jpg', NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, NULL, NULL, NULL, '0', '2023-11-18 04:03:57', '2023-12-13 04:06:33'),
 (10, 'Ut sed asperiores ev', 'Nam facilis repellen', 'backend/service/main_image/1782895743704326.jpg', '328', 'backend/service/banner_image/1782895743766455.jpg', NULL, NULL, NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper aliquam, fermentum himenaeos molestie aptent tempor cum malesuada arcu et vitae, sociosqu felis sociis dictumst vulputate dis mi per. Suscipit volutpat consequat vehicula feugiat lacinia a torquent magnis vitae, netus nibh sociis conubia facilisi at fringilla facilisis tempus, id ullamcorper lacus dapibus risus praesent quisque aptent. Fusce magna sagittis molestie leo felis venenatis placerat, dui vel tempor vestibulum arcu rutrum sodales, ornare quisque vulputate elementum cubilia porttitor. Rhoncus facilisi in orci imperdiet nisi elementum, vehicula vivamus proin gravida cras potenti, ridiculus montes est lectus varius. Tortor a nisl vehicula scelerisque arcu aptent fermentum tellus, et eleifend dapibus conubia euismod ad aliquet.</p>', NULL, NULL, NULL, '0', '2023-11-18 04:04:39', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rounds`
+--
+
+CREATE TABLE `rounds` (
+  `id` bigint UNSIGNED NOT NULL,
+  `seasons_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `rounds`
+--
+
+INSERT INTO `rounds` (`id`, `seasons_id`, `name`, `created_at`, `updated_at`) VALUES
+(1, '8', 'Round 1st', '2023-12-17 01:05:16', '2023-12-17 03:17:15'),
+(2, '8', 'Round 2nd', '2023-12-17 01:05:30', '2023-12-17 03:17:21'),
+(3, '7', 'Round 1st', '2023-12-17 01:27:32', '2023-12-17 01:27:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seasons`
+--
+
+CREATE TABLE `seasons` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `seasons`
+--
+
+INSERT INTO `seasons` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(2, 'Season 1', '2023-12-16 23:27:36', '2023-12-16 23:27:36'),
+(3, 'Season 2', '2023-12-16 23:30:50', '2023-12-16 23:30:50'),
+(4, 'Season 3', '2023-12-16 23:30:59', '2023-12-16 23:30:59'),
+(5, 'Season 4', '2023-12-16 23:31:06', '2023-12-16 23:31:13'),
+(6, 'Season 5', '2023-12-16 23:31:18', '2023-12-16 23:31:18'),
+(7, 'Season 6', '2023-12-16 23:31:28', '2023-12-16 23:31:28'),
+(8, 'Season 7', '2023-12-16 23:31:40', '2023-12-16 23:31:40');
 
 -- --------------------------------------------------------
 
@@ -601,7 +725,7 @@ INSERT INTO `sponsors` (`id`, `title_english`, `title_bangla`, `image`, `status`
 CREATE TABLE `teams` (
   `id` bigint UNSIGNED NOT NULL,
   `name_english` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name_bangla` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `desig_english` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `desig_bangla` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -627,7 +751,7 @@ INSERT INTO `teams` (`id`, `name_english`, `name_bangla`, `desig_english`, `desi
 (1, 'Olivia Peterson', 'Olivia Peterson', '[ CEO of Company ]', '[ CEO of Company ]', 'tomal@gmail.com', 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.twitter.com/', 'https://www.linkedin.com/', 'https://telegram.org/', 'https://www.youtube.com/', 'backend/team/1784505994220914.png', 'faculty', 1, 0, '2023-11-05 03:58:12', '2023-12-05 22:38:54'),
 (2, 'Robert Cooper', 'Robert Cooper', '[ Finance Manager ]', '[ Finance Manager ]', 'taleb@gmail.com', 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.twitter.com/', 'https://www.linkedin.com/', 'https://telegram.org/', 'https://www.youtube.com/', 'backend/team/1784505978095630.png', 'faculty', 1, 0, '2023-11-05 04:00:57', '2023-12-05 22:38:39'),
 (3, 'Sarah Michelle', 'Sarah Michelle', '[ Marketing Manager ]', '[ Marketing Manager ]', 'mewuzumury@mailinator.com', 'Nam eos labore accu', 'Dolor voluptatum fug', 'Id quis dolores dol', 'Nostrum voluptas ull', 'Perspiciatis quia f', 'Quos omnis id dicta', 'backend/team/1784505964448488.png', 'advisory', 1, 0, '2023-11-05 04:02:11', '2023-12-05 22:38:26'),
-(4, 'Christina Torres', 'Christina Torres', '[ Company Founder ]', '[ Company Founder ]', 'xirivawefy@mailinator.com', 'Hic neque atque ipsa', 'Quam in amet proide', 'Eligendi ducimus re', 'Consequatur ex error', 'Voluptas esse ea ut', 'Voluptas nulla in es', 'backend/team/1784505927393733.png', 'vice', 1, 0, '2023-11-14 02:55:13', '2023-12-05 22:37:50'),
+(4, 'Christina Torres', '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit in, ultrices arcu conubia lectus habitant per inceptos dictumst aptent, justo dui feugiat penatibus sagittis orci habitasse. Inceptos rhoncus congue vivamus enim turpis platea diam hac bibendum, id ultrices eu magnis tellus senectus aliquet nisi, fusce ligula commodo gravida velit nam proin aenean. Donec viverra tristique proin volutpat orci platea imperdiet, mi blandit leo congue morbi nisi, eleifend pretium natoque porta magnis urna. Etiam litora nullam duis auctor eget facilisi nec laoreet dignissim mauris blandit habitasse himenaeos eros, vel ultrices rutrum convallis per aliquam cursus interdum urna leo mi quis. Velit class habitant eros vel pretium curae rhoncus nostra at pharetra, ligula montes nam eleifend curabitur condimentum turpis inceptos venenatis, semper purus interdum cubilia diam vehicula orci in malesuada. Nullam nulla mattis magna posuere sapien tempus blandit, porttitor sollicitudin lobortis fusce iaculis in habitant curae, urna fermentum platea facilisis neque fames. Ante vitae urna augue in parturient viverra, nibh tincidunt arcu ad pharetra, primis tempus vel duis mauris.</p>', '[ Company Founder ]', '[ Company Founder ]', 'xirivawefy@mailinator.com', 'Hic neque atque ipsa', 'Quam in amet proide', 'Eligendi ducimus re', 'Consequatur ex error', 'Voluptas esse ea ut', 'Voluptas nulla in es', 'backend/team/1784505927393733.png', 'vice', 1, 0, '2023-11-14 02:55:13', '2023-12-26 02:09:07'),
 (5, 'Amalia Bruno', 'Amalia Bruno', '[ Interior Designer ]', '[ Interior Designer ]', 'lilodehe@mailinator.com', 'Saepe voluptatem iru', 'Veniam est pariatur', 'Voluptas perferendis', 'Provident tempor ob', 'Officiis sunt amet', 'Aut ut dolore aliqui', 'backend/team/1784505914927412.png', 'vice', 1, 0, '2023-11-23 05:44:24', '2023-12-05 22:37:38');
 
 -- --------------------------------------------------------
@@ -731,7 +855,9 @@ CREATE TABLE `trunament_rankings` (
   `trunament_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `team_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ranking_number` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `comment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Kill` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Booyah` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `match` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -740,9 +866,37 @@ CREATE TABLE `trunament_rankings` (
 -- Dumping data for table `trunament_rankings`
 --
 
-INSERT INTO `trunament_rankings` (`id`, `trunament_id`, `team_id`, `ranking_number`, `comment`, `created_at`, `updated_at`) VALUES
-(2, '5', '15', '1', 'top', '2023-12-14 03:01:28', '2023-12-14 03:01:28'),
-(3, '6', '16', '1', 'top', '2023-12-14 03:01:41', '2023-12-14 03:01:41');
+INSERT INTO `trunament_rankings` (`id`, `trunament_id`, `team_id`, `ranking_number`, `Kill`, `Booyah`, `match`, `created_at`, `updated_at`) VALUES
+(4, '6', '16', '663', '31', '96', '27', '2023-12-16 05:32:58', '2023-12-16 05:32:58'),
+(5, '5', '15', '794', '2', '30', '39', '2023-12-16 05:49:50', '2023-12-16 05:49:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trunament_schedules`
+--
+
+CREATE TABLE `trunament_schedules` (
+  `id` bigint UNSIGNED NOT NULL,
+  `round_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seasons_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `group` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `start_time` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `map` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `trunament_schedules`
+--
+
+INSERT INTO `trunament_schedules` (`id`, `round_id`, `seasons_id`, `date`, `group`, `start_time`, `map`, `created_at`, `updated_at`) VALUES
+(1, '2', '6', '2017-10-01', 'Suscipit consequuntu', '23:42', 'Dignissimos earum ve', '2023-12-17 01:26:10', '2023-12-17 01:26:10'),
+(2, '1', '6', '2023-12-17', 'Sed voluptate saepe', '13:26', 'Repudiandae eos saep', '2023-12-17 01:26:26', '2023-12-17 01:26:26'),
+(3, '1', '7', '2023-12-17', 'Sed voluptate saepe', '13:27', 'Repudiandae eos saep', '2023-12-17 01:28:11', '2023-12-17 01:28:11'),
+(4, '3', '7', '2023-12-17', 'Ut ullam voluptatibu', '13:28', 'Reiciendis quae numq', '2023-12-17 01:28:28', '2023-12-17 01:28:28');
 
 -- --------------------------------------------------------
 
@@ -948,6 +1102,12 @@ ALTER TABLE `notices`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `page_titles`
+--
+ALTER TABLE `page_titles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
@@ -962,9 +1122,27 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `persone_rankings`
+--
+ALTER TABLE `persone_rankings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rounds`
+--
+ALTER TABLE `rounds`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `seasons`
+--
+ALTER TABLE `seasons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1013,6 +1191,12 @@ ALTER TABLE `testimonials`
 -- Indexes for table `trunament_rankings`
 --
 ALTER TABLE `trunament_rankings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `trunament_schedules`
+--
+ALTER TABLE `trunament_schedules`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1120,7 +1304,7 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `notices`
@@ -1129,16 +1313,40 @@ ALTER TABLE `notices`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `page_titles`
+--
+ALTER TABLE `page_titles`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `persone_rankings`
+--
+ALTER TABLE `persone_rankings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `rounds`
+--
+ALTER TABLE `rounds`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `seasons`
+--
+ALTER TABLE `seasons`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -1156,7 +1364,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `sponsors`
 --
 ALTER TABLE `sponsors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `teams`
@@ -1186,7 +1394,13 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `trunament_rankings`
 --
 ALTER TABLE `trunament_rankings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `trunament_schedules`
+--
+ALTER TABLE `trunament_schedules`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

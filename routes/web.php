@@ -62,6 +62,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 Route::controller(WebViewHomePageController::class)->group(function () {
     Route::get('/', 'tech_web_home_index')->name('webview.home.index');
     Route::get('/upcoming-matches', 'tech_web_upcoming_matches')->name('webview.upcoming_matches');
+    Route::get('/player-details/{id}', 'tech_web_player_details')->name('webview.player_details');
 });
 
 // beckend all routes///////////////////////////////////////////////////////////////////////////

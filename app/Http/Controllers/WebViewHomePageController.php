@@ -77,4 +77,9 @@ class WebViewHomePageController extends Controller
         $PageTitle = PageTitle::where('page', 9)->get();
         return view('frontend.upcoming-matches.index', compact('PageTitle', 'services'));
     }
+    public function tech_web_player_details($id)
+    {
+        $teams = Team::find($id);
+        return view('frontend.player-details.index', compact('teams'));
+    }
 }
