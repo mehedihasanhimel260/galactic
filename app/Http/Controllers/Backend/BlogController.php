@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\PageTitle;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 
@@ -214,11 +215,13 @@ class BlogController extends Controller
     public function tech_web_all_recent_activity_list()
     {
         $blogs = Blog::where('recent_activity', 1)->paginate(4);
-        return view('frontend.recent-activity.index', compact('blogs'));
+        $PageTitle = PageTitle::where('page', 5)->get();
+        return view('frontend.recent-activity.index', compact('blogs', 'PageTitle'));
     }
     public function tech_web_all_tunament_list()
     {
         $blogs = Blog::where('recent_activity', 0)->paginate(4);
-        return view('frontend.blog.tunament', compact('blogs'));
+        $PageTitle = PageTitle::where('page', 8)->get();
+        return view('frontend.blog.tunament', compact('blogs', 'PageTitle'));
     }
 }

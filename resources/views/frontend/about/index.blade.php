@@ -9,10 +9,13 @@
         </div>
         <div class="container">
             <div class="page-header-info">
-                <h4>About Us</h4>
-                <h2>About Galactic Squad</h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 0)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -39,10 +42,13 @@
         <div class="container">
             <div class="section-heading-group mb-40">
                 <div class="section-heading">
-                    <h3>Our Gameplay</h3>
-                    <h2>Our Recent <span>Gameplay</span></h2>
-                    <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                        committed team.</p>
+                    @foreach ($PageTitle as $key => $item)
+                        @if ($key === 1)
+                            <h3>{{ $item->title }}</h3>
+                            <h2>{{ $item->sub_title }}</h2>
+                            <p>{{ $item->sort_description }}</p>
+                        @endif
+                    @endforeach
                 </div>
                 <div><a href="upcoming-matches.html" class="default-btn">View All Matches</a></div>
             </div>
@@ -92,10 +98,13 @@
     <section class="team-section padding-bottom">
         <div class="container">
             <div class="section-heading text-center mb-40">
-                <h3>Our Gammers</h3>
-                <h2>Meet Our <span>Gamers</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 2)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <div class="outside-spacing">
                 <div class="team-carousel">
@@ -131,8 +140,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="section-heading">
-                <h3>Connect With Our Gaming Team!</h3>
-                <h2>Join with us for upcoming<br>gaming tournaments!</h2>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 3)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                    @endif
+                @endforeach
                 <a href="{{ route('contact.us') }}" class="default-btn">Join Our Team</a>
             </div>
         </div>

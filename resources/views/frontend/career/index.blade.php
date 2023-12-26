@@ -9,10 +9,14 @@
         </div>
         <div class="container">
             <div class="page-header-info">
-                <h4>Blog All</h4>
-                <h2>Gaming News &amp; Insights</h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+
+                @foreach ($PageTitle as $key => $item)
+                @if ($key === 0)
+                <h4>{{ $item->title }}</h4>
+                <h2>{{ $item->sub_title }}</h2>
+                    <p>{{ $item->sort_description }}</p>
+                @endif
+            @endforeach
             </div>
         </div>
     </section>

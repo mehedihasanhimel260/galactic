@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\ContactUs;
+use App\Models\PageTitle;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
@@ -88,12 +89,14 @@ class CareerController extends Controller
     public function tech_web_gaming_career_apply()
     {
         $blogs = Blog::where('recent_activity', 2)->paginate(4);
-        return view('frontend.career.index', compact('blogs'));
+        $PageTitle = PageTitle::where('page', 6)->get();
+        return view('frontend.career.index', compact('blogs', 'PageTitle'));
     }
     public function tech_web_gaming_career_apply_form()
     {
         $blogs = Blog::where('recent_activity', 2)->paginate(4);
-        return view('frontend.career.jobform', compact('blogs'));
+        $PageTitle = PageTitle::where('page', 6)->get();
+        return view('frontend.career.jobform', compact('blogs', 'PageTitle'));
     }
     public function tech_web_gaming_career_apply_store(Request $request)
     {

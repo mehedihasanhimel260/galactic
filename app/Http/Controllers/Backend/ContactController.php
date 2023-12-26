@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ContactUs;
+use App\Models\PageTitle;
 use App\Models\WebsiteLink;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,8 +13,10 @@ class ContactController extends Controller
 {
     public function tech_web_contact_us()
     {
+        $PageTitle = PageTitle::where('page', 7)->get();
         $contact = WebsiteLink::latest()->first();
-        return view('frontend.contact.index', compact('contact'));
+
+        return view('frontend.contact.index', compact('contact', 'PageTitle'));
     } //end method------------------------------------
 
     public function tech_web_contactdata_store(Request $request)

@@ -10,9 +10,8 @@
         <div class="container">
             <div class="page-header-info">
                 <h4>Blog Details</h4>
-                <h2>Microsoft Xbox Publishes First <br>Transparency Report!</h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                <h2> {{ $blog_details->title_english }}</h2>
+
                 <ul class="post-meta">
                     <li><i class="las la-user"></i> </li>
                     <li><i class="las la-calendar"></i>{{ $blog_details->created_at->format('F d, Y') }}</li>

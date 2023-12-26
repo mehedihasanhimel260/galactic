@@ -43,10 +43,14 @@
     <section class="matches-section padding">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Upcoming matches</h3>
-                <h2>Battles Extreme <br> Masters <span>Tournament</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 0)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
+
             </div>
             <ul class="upcoming-matches">
                 @foreach ($services as $service)
@@ -83,10 +87,13 @@
     <section class="matches-section padding">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Upcoming Trunament Schedule</h3>
-                <h2>Battles Extreme <br> Masters <span>Tournament Schedule</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 1)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <section class="cart-section padding-top">
                 @foreach ($rounds as $round)
@@ -138,10 +145,13 @@
     <section class="matches-section padding">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Top Ranking </h3>
-                <h2>Battles Extreme <br> Masters <span>Tournament Ranking</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 2)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <section class="cart-section padding-top">
 
@@ -181,10 +191,13 @@
     <section class="matches-section padding">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Top Ranking </h3>
-                <h2>Battles Extreme <br> Masters <span>Tournament Ranking</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 3)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             @foreach ($tournaments as $tournament)
                 <section class="cart-section padding-top">
@@ -229,10 +242,13 @@
     <section class="watch-live-section padding-bottom">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Watch The Gameplay</h3>
-                <h2>Watch Live <span>Streaming</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 4)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <div class="carousel-wrap">
                 <div class="watch-carousel swiper-container">
@@ -265,10 +281,13 @@
     <section class="team-section padding-bottom">
         <div class="container">
             <div class="section-heading text-center mb-40 wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Our Gammers</h3>
-                <h2>Meet Our <span>Gamers</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 5)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <div class="outside-spacing">
                 <div class="team-carousel">
@@ -305,11 +324,14 @@
             <div class="row align-items-center">
                 <div class="col-md-6 sm-padding">
                     <div class="section-heading">
-                        <h3>Send Us a Mail</h3>
-                        <h2>Join Us As a Super Fans and Get all <span>the Benefits</span></h2>
-                        <p>Our success in creating business solutions is due in large part <br>to our talented and
-                            highly committed team.</p>
-                        <a href="{{ asset('frontend') }}/contact.html" class="default-btn">Join Our Team
+                        @foreach ($PageTitle as $key => $item)
+                            @if ($key === 6)
+                                <h3>{{ $item->title }}</h3>
+                                <h2>{{ $item->sub_title }}</h2>
+                                <p>{{ $item->sort_description }}</p>
+                            @endif
+                        @endforeach
+                        <a href="{{ route('contact.us') }}" class="default-btn">Join Our Team
                             <span></span></a>
                     </div>
                 </div>
@@ -360,10 +382,13 @@
     <section class="shop-section padding-bottom">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>Online Gaming Shop</h3>
-                <h2>Explore Our <span>Gears</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 7)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <div class="outside-spacing">
                 <div class="shop-carousel">
@@ -410,10 +435,13 @@
     <section class="blog-section">
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
-                <h3>What's on our mind</h3>
-                <h2>News and <span>Headlines</span></h2>
-                <p>Our success in creating business solutions is due in large part <br>to our talented and highly
-                    committed team.</p>
+                @foreach ($PageTitle as $key => $item)
+                @if ($key === 8)
+                    <h3>{{ $item->title }}</h3>
+                    <h2>{{ $item->sub_title }}</h2>
+                    <p>{{ $item->sort_description }}</p>
+                @endif
+            @endforeach
             </div>
             <div class="row grid-post">
                 @foreach ($blogs as $blog)

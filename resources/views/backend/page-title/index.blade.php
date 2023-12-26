@@ -22,7 +22,7 @@
             <!-- end page title -->
 
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
@@ -79,7 +79,7 @@
                     </div> <!-- end card -->
 
                 </div><!-- end col -->
-            </div>
+            </div> --}}
             @for ($page = 1; $page <= 9; $page++)
                 <div class="row">
                     <div class="col-12">
@@ -139,8 +139,8 @@
                                                         @csrf
                                                         <a href="{{ route('page-title.edit', $item->id) }}"
                                                             class="btn btn-info">Edit</a>
-                                                        <button type="submit" class="btn btn-danger"
-                                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                                                        {{-- <button type="submit" class="btn btn-danger"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</button> --}}
                                                     </form>
                                                 </td>
                                             </tr>

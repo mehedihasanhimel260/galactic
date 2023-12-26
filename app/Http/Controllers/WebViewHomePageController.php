@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\CounterIcon;
 use App\Models\Heros;
 use App\Models\ImageGallery;
+use App\Models\PageTitle;
 use App\Models\PersoneRanking;
 use App\Models\Project;
 use App\Models\Round;
@@ -67,11 +68,13 @@ class WebViewHomePageController extends Controller
         $persontrunamentRanking = PersoneRanking::with('TeamInfo', 'trunament')
             ->orderBy('ranking_number', 'DESC')
             ->get();
-        return view('frontend.home.index', compact('tournaments', 'persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
+        $PageTitle = PageTitle::where('page', 1)->get();
+        return view('frontend.home.index', compact('PageTitle', 'tournaments', 'persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {
         $services = Service::latest()->paginate(10);
-        return view('frontend.upcoming-matches.index', compact('services'));
+        $PageTitle = PageTitle::where('page', 9)->get();
+        return view('frontend.upcoming-matches.index', compact('PageTitle', 'services'));
     }
 }

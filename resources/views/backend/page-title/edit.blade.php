@@ -27,44 +27,64 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="text-white" style="font-size: 20px">Trunament Round Information</p>
-                            <form method="post" action="{{ route('page-title.update', 1) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('page-title.update', $PageTitle->id) }}"
+                                enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 ">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Page Name </label>
                                             <select id="tournamentSelect" name="page" class="form-select mt-2 p-2">
-                                                <option value="" selected disabled>Select Page Name...</option>
-                                                <option value="1">Home</option>
-                                                <option value="2">About Us</option>
-                                                <option value="3">Tournament</option>
-                                                <option value="4">Blog</option>
-                                                <option value="5">Recent Activity</option>
-                                                <option value="6">Career</option>
-                                                <option value="7">Contact</option>
-                                                <option value="8">Upcoming Tournament</option>
-                                                <option value="9">Upcoming Matches</option>
+                                                <option value="1" {{ $PageTitle->page == 1 ? 'selected' : '' }}>
+                                                    Home
+                                                </option>
+                                                <option value="2" {{ $PageTitle->page == 2 ? 'selected' : '' }}>
+                                                    About Us
+                                                </option>
+                                                <option value="3" {{ $PageTitle->page == 3 ? 'selected' : '' }}>
+                                                    Tournament
+                                                </option>
+                                                <option value="4" {{ $PageTitle->page == 4 ? 'selected' : '' }}>
+                                                    Blog
+                                                </option>
+                                                <option value="5" {{ $PageTitle->page == 5 ? 'selected' : '' }}>
+                                                    Recent Activity
+                                                </option>
+                                                <option value="6" {{ $PageTitle->page == 6 ? 'selected' : '' }}>
+                                                    Career
+                                                </option>
+                                                <option value="7" {{ $PageTitle->page == 7 ? 'selected' : '' }}>
+                                                    Contact
+                                                </option>
+                                                <option value="8" {{ $PageTitle->page == 8 ? 'selected' : '' }}>
+                                                    Upcoming Tournament
+                                                </option>
+                                                <option value="9" {{ $PageTitle->page == 9 ? 'selected' : '' }}>
+                                                    Upcoming Matches
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 ">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Title </label>
-                                            <input type="text" name="title" value="" class="form-control "
-                                                placeholder="Title Name...">
+                                            <input type="text" name="title" value="{{ $PageTitle->title }}"
+                                                class="form-control " placeholder="Title Name...">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 ">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Sub Title </label>
-                                            <input type="text" name="sub_title" class="form-control"
-                                                placeholder="Sub Title...">
+                                            <input type="text" name="sub_title" value="{{ $PageTitle->sub_title }}"
+                                                class="form-control" placeholder="Sub Title...">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-3">
                                             <label for="simpleinput" class="form-label">Short Description</label>
-                                            <input type="text" name="sort_description" class="form-control mt-2 p-2"
+                                            <input type="text" name="sort_description"
+                                                value="{{ $PageTitle->sort_description }}" class="form-control mt-2 p-2"
                                                 placeholder="Short Description Name...">
                                         </div>
                                     </div>

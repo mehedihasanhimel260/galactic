@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\PageTitle;
-use App\Models\Round;
-use App\Models\Season;
 use Illuminate\Http\Request;
 
 class PageTitleController extends Controller
@@ -52,8 +50,10 @@ class PageTitleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PageTitle $pageTitle)
+    public function edit($id)
     {
+        $PageTitle = PageTitle::find($id);
+        return view('backend.page-title.edit', compact('PageTitle'));
     }
 
     /**
