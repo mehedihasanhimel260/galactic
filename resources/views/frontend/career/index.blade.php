@@ -11,12 +11,12 @@
             <div class="page-header-info">
 
                 @foreach ($PageTitle as $key => $item)
-                @if ($key === 0)
-                <h4>{{ $item->title }}</h4>
-                <h2>{{ $item->sub_title }}</h2>
-                    <p>{{ $item->sort_description }}</p>
-                @endif
-            @endforeach
+                    @if ($key === 0)
+                        <h4>{{ $item->title }}</h4>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -28,7 +28,7 @@
                         @foreach ($blogs as $blog)
                             <div class="col-md-6 padding-15">
                                 <div class="post-card">
-                                    <div class="post-thumb">
+                                    <div class="post-thumb ">
                                         <a href="{{ route('blog.details', $blog->id) }}">
                                             <img src="{{ asset($blog->main_image) }}" alt="post">
                                         </a>
@@ -78,7 +78,8 @@
                         @endif
 
                         @for ($i = 1; $i <= $blogs->lastPage(); $i++)
-                            <li><a href="{{ $blogs->url($i) }}" @if ($blogs->currentPage() === $i) class="active" @endif>{{ $i }}</a></li>
+                            <li><a href="{{ $blogs->url($i) }}"
+                                    @if ($blogs->currentPage() === $i) class="active" @endif>{{ $i }}</a></li>
                         @endfor
 
                         @if ($blogs->hasMorePages())
