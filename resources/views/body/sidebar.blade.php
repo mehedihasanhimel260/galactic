@@ -143,6 +143,23 @@
                         </ul>
                     </div>
                 </li>
+                <li>
+                    <a href="#sidebarPlayerRanking" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span>Player Ranking Setting</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarPlayerRanking">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('player-ranking.index') }}">All Player Ranking</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('player-ranking.index') }}">Add Player Ranking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
 
                 <li>

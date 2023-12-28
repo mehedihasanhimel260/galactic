@@ -96,48 +96,54 @@
                 @endforeach
             </div>
             <section class="cart-section padding-top">
-                @foreach ($rounds as $round)
-                    <div class="container mt-5">
-                        <h2>{{ $round->season->name }} {{ $round->name }} Table</h2>
-                        <hr style="width:50%;text-align:left;margin-left:0;padding:5px;">
-                        <div class="row cart-header">
-                            <div class="col-lg-6">Date</div>
-                            <div class="col-lg-2">Group</div>
-                            <div class="col-lg-2">Time</div>
-                            <div class="col-lg-2">Map</div>
-                        </div>
-                        @php
-                            $filteredSchedules = $trunamentSchedule->filter(function ($item) use ($round) {
-                                return $item->round->id === $round->id;
-                            });
-                        @endphp
-                        @foreach ($filteredSchedules as $item)
-                            <div class="row cart-body pb-30">
-                                <div class="col-lg-6">
-                                    <div class="cart-item">
-                                        <h3>{{ \Carbon\Carbon::parse($item->date)->format('d-M-Y') }}</h3>
-                                    </div>
+                <div class="row ">
+                    @foreach ($rounds as $round)
+                        <div class="col-md-6 ">
+
+                            <div class="container m-2">
+                                <h3>{{ $round->season->name }} {{ $round->name }} Table</h3>
+                                <hr style="width:50%;text-align:left;margin-left:0;padding:5px;">
+                                <div class="row cart-header">
+                                    <div class="col-lg-3">Date</div>
+                                    <div class="col-4 col-lg-2">Group</div>
+                                    <div class="col-3 col-lg-2">Time</div>
+                                    <div class="col-4 col-lg-2">Map</div>
                                 </div>
-                                <div class="col-4 col-lg-2">
-                                    <div class="cart-item">
-                                        <h3> {{ $item->group }}</h3>
+                                @php
+                                    $filteredSchedules = $trunamentSchedule->filter(function ($item) use ($round) {
+                                        return $item->round->id === $round->id;
+                                    });
+                                @endphp
+                                @foreach ($filteredSchedules as $item)
+                                    <div class="row cart-body pb-30">
+                                        <div class="col-lg-3">
+                                            <div class="cart-item">
+                                                <h4>{{ \Carbon\Carbon::parse($item->date)->format('d-M-Y') }}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-lg-2">
+                                            <div class="cart-item">
+                                                <h4> {{ $item->group }}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 col-lg-2">
+                                            <div class="cart-item">
+                                                <h4>{{ \Carbon\Carbon::parse($item->start_time)->format('h:i A') }} </h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-lg-2">
+                                            <div class="cart-item">
+                                                <h4>{{ $item->map }}</h4>
+                                            </div>
+                                        </div>
+                                        <hr>
                                     </div>
-                                </div>
-                                <div class="col-3 col-lg-2">
-                                    <div class="cart-item">
-                                        <h3>{{ \Carbon\Carbon::parse($item->start_time)->format('h:i A') }} </h3>
-                                    </div>
-                                </div>
-                                <div class="col-3 col-lg-2">
-                                    <div class="cart-item">
-                                        <h3>{{ $item->map }}</h3>
-                                    </div>
-                                </div>
-                                <hr>
+                                @endforeach
                             </div>
-                        @endforeach
-                    </div>
-                @endforeach
+                        </div>
+                    @endforeach
+
+                </div>
             </section>
         </div>
     </section>
@@ -206,7 +212,7 @@
                         <thead>
                             <tr>
                                 <th>Pos</th>
-                                <th>Team Name</th>
+                                <th>Player Name</th>
                                 <th>Match</th>
                                 <th>Booyah</th>
                                 <th>Kill</th>
@@ -237,6 +243,51 @@
             @endforeach
         </div>
     </section>
+
+
+    <section class="matches-section padding">
+        <div class="container">
+            <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
+                @foreach ($PageTitle as $key => $item)
+                    @if ($key === 9)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
+            </div>
+            <section class="cart-section padding-top">
+                <h4 class="header-title">Player Ranking Table</h4>
+                <table id="example" class="table text-light table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Player Name</th>
+                            <th>Match</th>
+                            <th>Booyah</th>
+                            <th>Kill</th>
+                            <th>PTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($PlayerRanking as $item)
+                            <tr class="text-light">
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->name }}</td>
+                                <th>{{ $item->match }}</th>
+                                <th>{{ $item->Booyah }}</th>
+                                <th>{{ $item->Kill }}</th>
+                                <th>{{ $item->pts }}</th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </section>
+        </div>
+    </section>
+
 
 
     <section class="watch-live-section padding-bottom">
@@ -306,7 +357,9 @@
                                     </div>
                                     <div class="team-content">
                                         <span class="whte-shape"></span>
-                                        <h3><a href="{{route('webview.player_details',$team->id)}}">{{ $team->name_english }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('webview.player_details', $team->id) }}">{{ $team->name_english }}</a>
+                                        </h3>
                                         <h4> {{ $team->desig_english }}</h4>
                                     </div>
                                 </div>
@@ -436,12 +489,12 @@
         <div class="container">
             <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
                 @foreach ($PageTitle as $key => $item)
-                @if ($key === 8)
-                    <h3>{{ $item->title }}</h3>
-                    <h2>{{ $item->sub_title }}</h2>
-                    <p>{{ $item->sort_description }}</p>
-                @endif
-            @endforeach
+                    @if ($key === 8)
+                        <h3>{{ $item->title }}</h3>
+                        <h2>{{ $item->sub_title }}</h2>
+                        <p>{{ $item->sort_description }}</p>
+                    @endif
+                @endforeach
             </div>
             <div class="row grid-post">
                 @foreach ($blogs as $blog)

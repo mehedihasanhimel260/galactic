@@ -22,6 +22,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HerosController;
 use App\Http\Controllers\PageTitleController;
 use App\Http\Controllers\PersoneRankingController;
+use App\Http\Controllers\PlayerRankingController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\TeamInfoController;
@@ -63,6 +64,9 @@ Route::controller(WebViewHomePageController::class)->group(function () {
     Route::get('/', 'tech_web_home_index')->name('webview.home.index');
     Route::get('/upcoming-matches', 'tech_web_upcoming_matches')->name('webview.upcoming_matches');
     Route::get('/player-details/{id}', 'tech_web_player_details')->name('webview.player_details');
+
+    Route::get('/all-team', 'all_team_list')->name('webview.all_team_list');
+    Route::get('/upcoming-matches', 'tech_web_upcoming_matches')->name('webview.upcoming_matches');
 });
 
 // beckend all routes///////////////////////////////////////////////////////////////////////////
@@ -248,6 +252,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('/admin/trunament-round-schedule', RoundController::class);
     Route::resource('/admin/heros-section', HerosController::class);
     Route::resource('/admin/page-title', PageTitleController::class);
+    Route::resource('/admin/player-ranking', PlayerRankingController::class);
     Route::get('/admin-team-data', [TrunamentRankingController::class, 'get_team_data'])->name('get_team_data');
     Route::get('admin/career/apply', [CareerController::class, 'index'])->name('tech_web_gaming_career_apply_index');
     Route::get('/admin/career/apply/{id}', [CareerController::class, 'destroy'])->name('tech_web_gaming_career_apply_destroy');

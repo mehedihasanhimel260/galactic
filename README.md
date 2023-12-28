@@ -10,5 +10,5 @@ npm i<br>
 then:<br>
 npm run dev<br>
 php artisan migrate:refresh --path='./database/migrations/2023_12_16_044934_create_rounds_table.php' <br>
-php artisan route:list --name=page-title<br>
+php artisan route:list --name=player-ranking<br>
 php artisan optimize:clear<br>

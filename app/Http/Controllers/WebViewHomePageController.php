@@ -11,12 +11,14 @@ use App\Models\Heros;
 use App\Models\ImageGallery;
 use App\Models\PageTitle;
 use App\Models\PersoneRanking;
+use App\Models\PlayerRanking;
 use App\Models\Project;
 use App\Models\Round;
 use App\Models\Season;
 use App\Models\Sponsor;
 use App\Models\Team;
 use App\Models\Slider;
+use App\Models\TeamInfo;
 use App\Models\Testimonial2;
 use App\Models\TrunamentRanking;
 use App\Models\TrunamentSchedule;
@@ -69,7 +71,8 @@ class WebViewHomePageController extends Controller
             ->orderBy('ranking_number', 'DESC')
             ->get();
         $PageTitle = PageTitle::where('page', 1)->get();
-        return view('frontend.home.index', compact('PageTitle', 'tournaments', 'persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
+        $PlayerRanking = PlayerRanking::get();
+        return view('frontend.home.index', compact('PlayerRanking', 'PageTitle', 'tournaments', 'persontrunamentRanking', 'trunamentRanking', 'testimonials', 'services', 'about', 'blogs', 'brands', 'teams', 'slider', 'projects_don', 'projects', 'images', 'videos', 'heros', 'rounds', 'trunamentSchedule'));
     }
     public function tech_web_upcoming_matches()
     {
@@ -81,5 +84,10 @@ class WebViewHomePageController extends Controller
     {
         $teams = Team::find($id);
         return view('frontend.player-details.index', compact('teams'));
+    }
+    public function all_team_list()
+    {
+        $gamingteam= TeamInfo::get();
+        return view('frontend.all-team.index',compact('gamingteam'));
     }
 }

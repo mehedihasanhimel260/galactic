@@ -29,7 +29,7 @@
                             <ul>
                                 <li><a href="{{ route('all.tunament.list') }}">Upcoming Tournament</a></li>
                                 <li><a href="{{ route('webview.upcoming_matches') }}">Upcoming Matches</a></li>
-                                {{-- <li><a href="{{ asset('frontend') }}/team-details.html">Team Details</a></li> --}}
+                                <li><a href="{{ route('webview.all_team_list') }}">All Team </a></li>
                             </ul>
                         </li>
 

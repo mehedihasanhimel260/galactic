@@ -69,7 +69,9 @@
                             </ul>
                         </div>
                         <div class="watch-info">
-                            <a class="dl-video-popup" data-autoplay="true" data-vbtype="video"
+                            <a 
+                            {{-- class="dl-video-popup" data-autoplay="true" data-vbtype="video"  --}}
+                              target="_blank"
                                 href="https://www.youtube.com/watch?v={{ $video->video_link }}"><i
                                     class="lab la-youtube"></i>Watch Streem</a>
                         </div>

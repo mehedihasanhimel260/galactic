@@ -27,8 +27,10 @@
                         <h2>Registration Details</h2>
                         <div class="checkout-form mb-30">
                             <div class="form-field">
+
                                 <input type="text" id="firstname" name="team_name" class="form-control"
-                                    value="{{ Auth::user()->name }}" placeholder="Team Name" required>
+                                    value="{{ Auth::user()->name ?? null }}" placeholder="Team Name" required>
+
                             </div>
                             <div class="form-field">
                                 <input type="text" id="lastname" name="link" class="form-control"
@@ -60,10 +62,10 @@
                             </div>
                             <div class="form-field">
                                 <input type="text" id="city" name="email" class="form-control" placeholder="email"
-                                    value="{{ $user->email }}" required>
+                                    value="{{ $user->email ?? null }}" required>
                             </div>
                             <div class="form-field">
-                                <input type="text" id="state" name="number" value="{{ $user->phone }}"
+                                <input type="text" id="state" name="number" value="{{ $user->phone ?? null }}"
                                     class="form-control" placeholder="number" required>
                             </div>
                             <div class="form-field">

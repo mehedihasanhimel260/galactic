@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\ContactUs;
 use App\Models\PageTitle;
 use App\Models\WebsiteLink;
-use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {

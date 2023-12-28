@@ -35,10 +35,13 @@ class TeamInfoController extends Controller
      */
     public function tech_web_gaming_team_registation_store(Request $request): RedirectResponse
     {
+        $request->validate([
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation for logo file
+        ]);
         $input = $request->all();
 
         $user = User::create([
-            'name' => $input['team_name'],
+            'name' => $input['player_name_1'],
             'email' => $input['email'],
             'role' => 'user',
             'phone' => $input['number'], //this was updated by me;
@@ -51,9 +54,15 @@ class TeamInfoController extends Controller
             $image = $request->file('logo');
             $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
             $image->move('backend/teamlogo/', $image_name);
-            $input['logo'] = 'backend/teamlogo/' . $image_name;
+            $logoPath = 'backend/teamlogo/' . $image_name;
         }
-        $input = $request->except('password');
+
+        $input = $request->except(['password', 'logo']);
+
+        if (isset($logoPath)) {
+            $input['logo'] = $logoPath;
+        }
+
         TeamInfo::create($input);
 
         $notification = [
@@ -92,7 +101,7 @@ class TeamInfoController extends Controller
 
         $user = User::findOrFail(Auth::user()->id); // Assuming a relationship between User and TeamInfo, adjust this accordingly if needed
         $user->update([
-            'name' => $input['tournament_name'],
+            'name' => $input['player_name_1'],
             'email' => $input['email'],
             'role' => 'user',
             'phone' => $input['number'],
@@ -104,7 +113,13 @@ class TeamInfoController extends Controller
             $image = $request->file('logo');
             $image_name = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
             $image->move('backend/teamlogo/', $image_name);
-            $input['logo'] = 'backend/teamlogo/' . $image_name;
+            $logoPath = 'backend/teamlogo/' . $image_name;
+        }
+
+        $input = $request->except(['logo']);
+
+        if (isset($logoPath)) {
+            $input['logo'] = $logoPath;
         }
 
         $teamInfo->update($input); // Update TeamInfo with the modified input
@@ -128,9 +143,13 @@ class TeamInfoController extends Controller
     }
     public function tech_web_gaming_team_registation()
     {
-        $user = User::find(Auth::user()->id);
-        $teamInfo = TeamInfo::where('email', Auth::user()->email)->first();
+        if (Auth::check()) {
+            $user = User::find(Auth::user()->id);
+            $teamInfo = TeamInfo::where('email', Auth::user()->email)->first();
+            $trunaments = Blog::where('recent_activity', 0)->get();
+            return view('frontend.registation.index', compact('trunaments', 'user', 'teamInfo'));
+        }
         $trunaments = Blog::where('recent_activity', 0)->get();
-        return view('frontend.registation.index', compact('trunaments', 'user', 'teamInfo'));
+        return view('frontend.registation.index', compact('trunaments'));
     }
 }
